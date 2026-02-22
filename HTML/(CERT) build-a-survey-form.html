@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="title">Survey Form</h1>
+      <p id="description">Thank you for taking the time to jam out on this form!</p>
+    </header>
+
+    <main>
+      <form id="survey-form">
+        <fieldset>
+          <legend>Personal Info</legend>
+          <label for="name" id="name-label">Name: </label>
+          <input id="name" type="text" required name="name" placeholder="e.g., Joko Sumanto">
+        
+          <br><label for ="email" id="email-label">Email (required): </label>
+          <input id="email" type="email" required minlength="6" name="email" placeholder="your-email@domain.com">
+        
+          <br><label for="number" id="number-label" name="age">Age: </label>
+          <input type="number" id="number" min="18" max="69" placeholder="36">
+        </fieldset>
+
+        <fieldset>
+          <legend>Musicianship</legend>
+          <fieldset>
+            <legend>What best describes you in your music journey?</legend>
+            <select id="dropdown" name="music-level">
+              <option selected value="full-time">Full-time Musician</option>
+              <option value="part-time">Part-time Musician</option>
+              <option value="hobbyist">Hobbyist</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>How happy are you with your music learning progress?</legend>  
+            <input id="very-happy" type="radio" name="music-learning" value="very-happy">
+            <label for="very-happy">Very Happy</label>
+          
+            <input id="somewhat-happy" type="radio" name="music-learning" value="somewhat-happy">
+            <label for="somewhat-happy">Somewhat Happy</label>
+
+            <input id="not-happy" type="radio" name="music-learning" value="not-happy">
+            <label for="not-happy">Not Happy</label>
+          </fieldset>
+          
+          <fieldset>
+            <legend>Choose the genres of your liking!</legend>
+            <input type="checkbox" id="jazz" value="jazz" name="genres">
+            <label for="jazz">Jazz</label>
+
+            <input type="checkbox" id="rock" value="rock" name="genres">
+            <label for="jazz">Rock</label>
+
+            <input type="checkbox" id="pop" value="pop" name="genres">
+            <label for="jazz">Pop</label>
+          </fieldset>
+        </fieldset>
+        
+        <div>
+          <label for="sharing">Share your favorite song(s) with others!</label>
+          <textarea name="sharing" id="sharing" cols="50" rows="5" placeholder="e.g., Stella by Starlight, etc."></textarea>
+        </div>
+        
+        <div>
+          <button id="submit" type="submit">Submit!</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

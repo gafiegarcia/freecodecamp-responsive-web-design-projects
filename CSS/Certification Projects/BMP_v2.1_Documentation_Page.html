@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BMP Technical Documentation Page</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <!-- Where the magic, uhm, styling happens -->
+    <link rel="stylesheet" href="BMP_v2.1_Documentation_Page.css">
+  </head>
+
+  <body>
+    <!-- Docs Navigation -->
+    <nav id="navbar">
+      <header>
+        <div id="BMP-v2-1">
+          <h1>BMP</h1>
+          <code class="code-inline">v2.1</code>
+        </div>
+        <p>B-roll Marking Program Docs</p>
+      </header>
+      <div id="nav-links" class="overflow-x-auto">
+        <a class="nav-link" href="#Overview">Overview</a>
+        <a class="nav-link" href="#The_Verdict_System">The Verdict System</a>
+        <a class="nav-link" href="#Pipeline_Architecture">Pipeline Architecture</a>
+        <a class="nav-link" href="#Visual_Units">Visual Units</a>
+        <a class="nav-link" href="#Tags_Lists">Tags Lists</a>
+        <a class="nav-link" href="#Semantic_Tagging_Rules">Semantic Tagging Rules</a>
+        <a class="nav-link" href="#Output_Format">Output Format</a>
+        <a class="nav-link" href="#Quality_Standards">Quality Standards</a>
+        <a class="nav-link" href="#Error_Handling">Error Handling</a>
+        <a class="nav-link" href="#Extending_BMP">Extending BMP</a>
+      </div>
+    </nav>
+
+    <!-- MAIN DOC -->
+    <div id="desktop-top-shadow" aria-hidden="true"></div>
+    <main id="main-doc">
+
+      <!-- Section 1: Overview -->
+      <section id="Overview" class="main-section">
+        <header><a href="#Overview">Overview</a></header>
+        <p>
+          The <strong>B-Roll Marking Program (BMP)</strong> is a reasoning engine that converts unmarked YouTube review scripts into color-coded B-roll shotlists. It was developed by and for the <a href="https://www.youtube.com/@Sobat_HAPE" target="_blank"><img aria-hidden="true" src="https://yt3.googleusercontent.com/nIDBevdq9ov_vpZLZaEbky3LDvGfnhLbm69VwskpoXfJQ3UBXL3yS-Uwx_YzGdpfesbySCIaqg=s900-c-k-c0x00ffffff-no-rj" class="logo-inline"> Sobat HAPE</a> tech review channel's videographer to automate the process of <em>marking</em> A-roll scripts to be transformed into B-roll shotlists with shooting angles color-coded meticulously — a process previously done manually, before every shoot.
+        </p>
+        <p>
+          BMP works by semantically analyzing a script's content, segmenting it into <a href="#Visual_Units"><em>visual units</em></a>, assigning product-specific <a href="#Tags_Lists"><em>tags</em></a>, and applying color-coded <a href="#The_Verdict_System"><em>verdicts</em></a> that tell the videographer exactly what camera angle and shot complexity each segment requires.
+        </p>
+        <p>
+          The current stable release is BMP v2.1, production-ready since December 5, 2025. It supports three product types through external Tags Lists:
+        </p>
+        <ul>
+          <li><strong>Smartphones</strong> — Tags List v2.5 (41 tags)</li>
+          <li><strong>TWS / Earbuds</strong> — Tags List v1.1 (42 tags)</li>
+          <li><strong>Tablets</strong> — Tags List v1.0 (51 tags)</li>
+        </ul>
+        <p>
+          BMP's architecture separates the universal verdict styling system from product-specific tag definitions. This means adding a new product type (e.g., smartwatches) only requires creating a new Tags List file — the core specification stays the same.
+        </p>
+      </section>
+
+      <!-- SECTION 2: The Verdict System -->
+      <section id="The_Verdict_System" class="main-section">
+        <header><a href="#The_Verdict_System">The Verdict System</a></header>
+        <p>
+          Verdicts are the universal styling layer of BMP. Each verdict encodes two pieces of information into a single visual treatment: the <strong>color</strong> indicates camera angle, and the <strong>weight</strong> (bold or normal) indicates shot complexity.
+        </p>
+        <p>
+          There are seven verdicts. They are hard-coded — the videographer never has to guess what a color means:
+        </p>
+        <div class="table-div overflow-x-auto">
+          <table>
+            <caption class="sr-only">Verdict System Table: Verdicts, Styling, and Meaning</caption>
+            <thead>
+              <tr>
+                <th scope="col">Verdict</th>
+                <th scope="col">Color (RGB)</th>
+                <th scope="col">Bold</th>
+                <th scope="col">Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="verdict-blue">biru tipis</th>
+                <td><code class="code-inline">rgb(0, 0, 255)</code></td>
+                <td>No</td>
+                <td>Eye-level static/slider solo indoor shots</td>
+              </tr>
+              <tr>
+                <th class="verdict-blue bold">biru tebel</th>
+                <td><code class="code-inline">rgb(0, 0, 255)</code></td>
+                <td>Yes</td>
+                <td>Eye-level handheld shots; needs talent for lifestyle demo</td>
+              </tr>
+              <tr>
+                <th class="verdict-green">ijo tipis</th>
+                <td><code class="code-inline">rgb(56, 118, 29)</code></td>
+                <td>No</td>
+                <td>45° static/slider solo indoor shots; angled close-ups</td>
+              </tr>
+              <tr>
+                <th class="verdict-green bold">ijo tebel</th>
+                <td><code class="code-inline">rgb(56, 118, 29)</code></td>
+                <td>Yes</td>
+                <td>45°/over-the-shoulder handheld; needs talent for interactive demo</td>
+              </tr>
+              <tr>
+                <th class="verdict-red">merah tipis</th>
+                <td><code class="code-inline">rgb(255, 0, 0)</code></td>
+                <td>No</td>
+                <td>Top-down flat-lay solo shots</td>
+              </tr>
+              <tr>
+                <th>unmarked</th>
+                <td><code class="code-inline">rgb(0, 0, 0)</code></td>
+                <td>No</td>
+                <td>A-roll, supers, photo samples — no B-roll needed</td>
+              </tr>
+              <tr>
+                <th class="verdict-magenta">uncertain</th>
+                <td><code class="code-inline">rgb(255, 0, 255)</code></td>
+                <td>No</td>
+                <td>Magenta fallback — no known tag fits; drives tags list evolution</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <strong>Key principle:</strong> Verdicts are universal across all product types. Tags are product-specific. When BMP assigns a tag, the verdict is automatically determined by the Tags List — the engine does not "choose" a verdict.
+        </div>
+        <h3>About the naming</h3>
+        <p>
+          The verdict names use Indonesian terms: biru = blue, ijo = green, merah = red, tipis = thin (normal weight), tebel = thick (bold). It came from how the internal team at <a href="https://www.youtube.com/@Sobat_HAPE" target="_blank"><img aria-hidden="true" class="logo-inline" src="https://yt3.googleusercontent.com/nIDBevdq9ov_vpZLZaEbky3LDvGfnhLbm69VwskpoXfJQ3UBXL3yS-Uwx_YzGdpfesbySCIaqg=s900-c-k-c0x00ffffff-no-rj">Sobat HAPE</a> call the types of shot angles exactly how they mark it on Google Docs where they collaborate (which is the system that BMP is automating now). So <code class="code-inline">ijo tebel</code> literally means "bold green" — a 45° interactive shot requiring talent assistance.
+        </p>
+      </section>
+
+      <!-- SECTION 3: Pipeline Architecture -->
+      <section id="Pipeline_Architecture" class="main-section">
+        <header><a href="#Pipeline_Architecture">Pipeline Architecture</a></header>
+        <p>
+          BMP processes scripts through a strict 6-stage pipeline. Each stage must complete before the next begins. There are no shortcuts or stage-skipping.
+        </p>
+        <ol>
+          <li><strong>Initialize & Comprehend</strong> — Identify product type, load the correct Tags List, read the full script without processing it.</li>
+          <li><strong>Identify Visual Units</strong> — Segment the script into atomic shootable chunks while preserving semantic unity.</li>
+          <li><strong>Semantic Tagging</strong> — Assign one tag from the loaded Tags List to each visual unit.</li>
+          <li><strong>Apply Verdicts</strong> — Look up each tag's hard-coded verdict and apply the corresponding color and weight.</li>
+          <li><strong>Generate HTML Output</strong> — Produce an annotated artifact with styled visual units and diagnostics.</li>
+          <li><strong>Post-Processing</strong> — Analyze uncertain tags, propose new tags, and suggest Tags List refinements.</li>
+        </ol>
+
+        <h3>Stage 1 detail: Product type detection</h3>
+        <p>
+          The engine reads the script to infer the product type (smartphone, tablet, TWS, etc.), then loads the appropriate Tags List file. The loaded version is always the highest available (v2.5 &gt; v2.4 &gt; v1.11 and so on)
+        </p>
+        <div class="callout callout-critical">
+          <strong>Critical rule:</strong> If the product type cannot be determined, or no Tags List exists for the detected type, BMP must halt immediately and request clarification. It never defaults to a product type.
+        </div>
+      </section>
+
+      <!-- SECTION 4: Visual Units -->
+      <section id="Visual_Units" class="main-section">
+        <header><a href="#Visual_Units">Visual Units</a></header>
+        <p>
+          A <strong>visual unit</strong> is the atomic building block of BMP output. It represents a single shootable segment in the script — the smallest meaningful piece of content that requires specific camera work. Every visual unit maps to <em>exactly one tag</em> and <em>one verdict</em>.
+        </p>
+
+        <h3>Segmentation principles (Stage 2: Identify Visual Units)</h3>
+        <p>
+          Visual units are identified based on <strong>semantic unity, not line breaks or paragraph boundaries</strong>:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Semantic Unity</strong> — Multiple sentences discussing the same shootable idea form one visual unit.
+          </li>
+          <li>
+            <strong>Concept Splitting</strong> — Different ideas in the same paragraph become separate visual units.
+          </li>
+          <li>
+            <strong>Granularity Limits</strong> — The minimum unit is a clause; the maximum is an entire paragraph. Never segment at word level.
+          </li>
+          <li>
+            <strong>Transitional Sentences</strong> — Merge with the following substantive content within the same paragraph.
+          </li>
+          <li>
+            <strong>Full Preservation</strong> — All text is preserved in the output. Nothing is discarded. Unmarked units get black text styling.
+          </li>
+        </ul>
+
+        <h3>Examples</h3>
+        <p>
+          A single sentence covering one concept is one unit:
+        </p>
+        <pre class="overflow-x-auto"><span class="code-comment">// One visual unit → [tech_spec_soc → biru tipis]</span>
+"Chipsetnya pakai Snapdragon 8 Elite."
+</pre>
+        <p>
+          Multiple sentences about the same topic merge into one unit:
+        </p>
+        <pre class="overflow-x-auto"><span class="code-comment">// One visual unit → [charging_speed → ijo tipis]</span>
+"Support pengecasan sampai 100W Supercharge
+dan 80W wireless. Buset, charger wireless 80W
+aja saya belum punya."</pre>
+        <p>
+          But when a single sentence packs in distinct specs, it splits at clause level:
+        </p>
+        <pre class="overflow-x-auto"><span class="code-comment">// Three visual units from one sentence</span>
+"...beresolusi Full HD+, 2520 x 1080p,"      <span class="code-comment">→ [display_spec]</span>
+"refresh rate adaptif, 1-120Hz"              <span class="code-comment">→ [display_refresh_rate]</span>
+"dan brightness nya sampai 2600 nits."       <span class="code-comment">→ [display_brightness]</span>
+</pre>
+      </section>
+
+      <!-- SECTION 5: Tags Lists -->
+      <section id="Tags_Lists" class="main-section">
+        <header><a href="#Tags_Lists">Tags Lists</a></header>
+        <p>
+          <a href="https://www.notion.so/BMP-Tags-List-2807193704028054bb75e1484b1293d0?source=copy_link" target="_blank"><img aria-hidden="true" class="logo-inline" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg">Tags Lists</a> are external Markdown files that define the product-specific vocabulary of BMP. Each tag within a list describes a shootable concept, includes reference trigger examples, and has a hard-coded verdict. The engine loads the correct list at Stage 1 and references it throughout processing.
+        </p>
+        <p>
+          You can access the latest version of the Tags List files here on my <a href="https://www.notion.so/BMP-Tags-List-2807193704028054bb75e1484b1293d0?source=copy_link" target="_blank"><img aria-hidden="true" class="logo-inline" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg">Notion</a>, along with all documented previous versions.
+        </p>
+        <h3>File naming convention</h3>
+        <pre class="overflow-x-auto">BMP_Tags_List_{ProductType}_v{Major}.{Minor}.md
+
+<span class="code-comment">// Current production files:</span>
+BMP_Tags_List_Smartphone_v2.5.md   <span class="code-comment">// 41 tags</span>
+BMP_Tags_List_TWS_v1.1.md          <span class="code-comment">// 42 tags</span>
+BMP_Tags_List_Tablet_v1.0.md       <span class="code-comment">// 51 tags</span>
+</pre>
+        <h3>Tag anatomy</h3>
+        <p>Every tag in a Tags List defines five properties:</p>
+        <div class="table-div overflow-x-auto">
+          <table>
+            <caption class="sr-only">Tags list properties and their purposes</caption>
+            <thead>
+              <tr>
+                <th scope="col">Property</th>
+                <th scope="col">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="bold">Tag name</th>
+                <td>Unique identifier used during processing (e.g., <code class="code-inline">camera_setup_spec</code>)</td>
+              </tr>
+              <tr>
+                <th class="bold">Use case</th>
+                <td>Describes what this tag represents visually</td>
+              </tr>
+              <tr>
+                <th class="bold">Trigger examples</th>
+                <td>Common phrases for reference — <em>not</em> for keyword matching</td>
+              </tr>
+              <tr>
+                <th class="bold">Verdict</th>
+                <td>Hard-coded color+weight from the Verdict System</td>
+              </tr>
+              <tr>
+                <th class="bold">Notes</th>
+                <td>Shooting instructions and special handling rules</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <h3>Product-specific differences</h3>
+        <p>
+          Each product type has unique tag categories that reflect how that product is reviewed and shot:
+        </p>
+        <ul>
+          <li>
+            <strong>Smartphones</strong> have tags for fingerprint sensors, antenna systems, IP ratings, and reverse charging — none of which appear in tablet or TWS lists.
+          </li>
+          <li>
+            <strong>Tablets</strong> have 5 keyboard accessory tags and 4 stylus tags, plus <code class="code-inline">display_surface</code> for PaperMatte finishes — an entirely different shooting focus.
+          </li>
+          <li>
+            <strong>TWS/Earbuds</strong> have granular sound quality tags (bass, mid, treble), an ANC category with 4 tags, and no <code class="code-inline">merah tipis</code> (top-down) tags at all since flat-lay isn't part of the TWS shooting workflow.
+          </li>
+        </ul>
+      </section>
+
+      <!-- SECTION 6: Semantic Tagging Rules -->
+      <section id="Semantic_Tagging_Rules" class="main-section">
+        <header><a href="#Semantic_Tagging_Rules">Semantic Tagging Rules</a></header>
+        <p>
+          Stage 3 (Semantic Tagging) is where BMP's intelligence lives. The fundamental rule is: <strong>understand the meaning, not the keywords.</strong>
+        </p>
+        <div class="callout callout-warning">
+          <strong>Prohibited:</strong> Tagging based solely on keyword presence. Trigger examples in Tags Lists exist only as reference material to help understand a tag's purpose — they must never be used as pattern-matching rules.
+        </div>
+        
+        <h3>Correct vs. incorrect tagging</h3>
+        <p>
+          Consider the script line: <q><i>Kameranya jelek banget</i></q> (The camera sucks).
+        </p>
+        <ul>
+          <li>
+            <strong><span aria-hidden='true'>❌</span> Wrong:</strong> Keyword "kamera" detected → tag as <code class="code-inline">camera_setup_spec</code>
+          </li>
+          <li>
+            <strong><span aria-hidden="true">✅</span> Correct:</strong> This is a subjective opinion about camera quality, no shootable visual → tag as <code class="code-inline">subjective_opinion</code> (unmarked)
+          </li>
+        </ul>
+
+        <h3>Context-aware decisions</h3>
+        <p>
+          Several tags require contextual awareness beyond the visual unit itself:
+        </p>
+        <ul>
+          <li>
+            <code class="code-inline">intro_beauty_shot</code> fires only once — on the first full product name mention. The context flag <code class="code-inline">intro_beauty_shot_seen</code> prevents duplicates.
+          </li>
+          <li>
+            <code class="code-inline">camera_setup_spec</code> triggers only when sensor/megapixel specs are introduced, not when discussing photo results (that's <code class="code-inline">camera_result</code>).
+          </li>
+          <li>
+            <code class="code-inline">battery_endurance</code> covers real-world usage experience ("tahan seharian"), while <code class="code-inline">tech_spec_battery_capacity</code> covers the raw mAh number.
+          </li>
+          <li>
+            <code class="code-inline">ip_rating</code> covers certifications and manufacturer claims, while <code class="code-inline">durability_test</code> covers the reviewer physically performing tests.
+          </li>
+        </ul>
+      </section>
+
+      <!-- SECTION 7: Output Format -->
+      <section id="Output_Format" class="main-section">
+        <header><a href="#Output_Format">Output Format</a></header>
+        <p>
+          BMP produces a single HTML file that preserves the full script in chronological order. Each visual unit is wrapped in a styled <code class="code-inline"><span class="code-comment">&lt;</span>div<span class="code-comment">&gt;</span></code> with the appropriate color and weight applied via CSS classes.
+        </p>
+
+        <h3>HTML structure</h3>
+        <pre class="overflow-x-auto"><code><span class="code-comment">&lt;!-- Each visual unit follows this pattern --&gt;</span>
+<span class="code-comment">&lt;</span><span class="code-syntax-blue">div</span> <span class="code-syntax-light-blue">class</span>=<span class="code-syntax-orange">"visual-unit {tag-name} {verdict-class}"</span><span class="code-comment">&gt;</span>
+    {full text content of this visual unit}
+    <span class="code-comment">&lt;</span><span class="code-syntax-blue">span</span> <span class="code-syntax-light-blue">class</span>=<span class="code-syntax-orange">"tag-label"</span><span class="code-comment">&gt;</span>
+        [{tag} → {verdict}]
+    <span class="code-comment">&lt;/</span><span class="code-syntax-blue">span</span><span class="code-comment">&gt;</span>
+<span class="code-comment">&lt;/</span><span class="code-syntax-blue">div</span><span class="code-comment">&gt;</span>
+
+<span class="code-comment">&lt;!-- Example: a chipset mention --&gt;</span>
+<span class="code-comment">&lt;</span><span class="code-syntax-blue">div</span> <span class="code-syntax-light-blue">class</span>=<span class="code-syntax-orange">"visual-unit tech-spec-soc biru-tipis"</span><span class="code-comment">&gt;</span>
+    Hape ini pake SoC Snapdragon 8 Elite.
+    <span class="code-comment">&lt;</span><span class="code-syntax-blue">span</span> <span class="code-syntax-light-blue">class</span>=<span class="code-syntax-orange">"tag-label"</span><span class="code-comment">&gt;</span>
+        [tech_spec_soc → biru tipis]
+    <span class="code-comment">&lt;/</span><span class="code-syntax-blue">span</span><span class="code-comment">&gt;</span>
+<span class="code-comment">&lt;/</span><span class="code-syntax-blue">div</span><span class="code-comment">&gt;</span></code></pre>
+
+        <h3>File naming</h3>
+        <p>
+          Output files follow a strict naming convention derived from the input filename:
+        </p>
+        <pre class="overflow-x-auto"><span class="code-comment">// Pattern</span>
+BMPv2.1 {original-filename-without-extension}.html
+
+<span class="code-comment">// Examples</span>
+Input:  <span class="code-syntax-orange">"Review iQoo Neo 10.docx"</span>
+Output: <span class="code-syntax-orange">"BMPv2.1 Review iQoo Neo 10.html"</span>
+
+Input:  <span class="code-syntax-orange">"Huawei_Pura_80_Ultra.docx"</span>
+Output: <span class="code-syntax-orange">"BMPv2.1 Huawei Pura 80 Ultra.html"</span>
+</pre>
+        <div class="callout callout-warning">
+          <b>Content labeling policy:</b> Never add "Review" to a filename unless it already exists in the original. At <a href="https://www.youtube.com/@Sobat_HAPE" target="_blank"><img aria-hidden="true" class="logo-inline" src="https://yt3.googleusercontent.com/nIDBevdq9ov_vpZLZaEbky3LDvGfnhLbm69VwskpoXfJQ3UBXL3yS-Uwx_YzGdpfesbySCIaqg=s900-c-k-c0x00ffffff-no-rj">Sobat HAPE</a>, "Review" is reserved exclusively for organic content — paid collaborations should never use this term.
+        </div>
+
+        <h3>Diagnostics section</h3>
+        <p>
+          Every output includes a diagnostics block appended after the styled script. This section reports processing metadata for quality verification:
+        </p>
+        <ul>
+          <li>BMP version and Tags List version loaded</li>
+          <li>Total visual units processed</li>
+          <li>Tag distribution breakdown (count per tag)</li>
+          <li>Verdict distribution breakdown (count per verdict)</li>
+          <li>List of uncertain clauses (if any)</li>
+          <li>Keyword-only tagging check (always PASS or FAIL)</li>
+          <li>Overall processing status</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 8: Quality Standards -->
+      <section id="Quality_Standards" class="main-section">
+        <header><a href="#Quality_Standards">Quality Standards</a></header>
+        <p>
+          Before finalizing output, BMP verifies every run against a checklist of quality criteria. A run is considered successful when all of the following are met:
+        </p>
+        <ul>
+          <li>Product type successfully identified (no ambiguity)</li>
+          <li>Latest version of Tags List loaded and reported</li>
+          <li>Every visual unit has a tag and verdict assigned</li>
+          <li><code class="code-inline">intro_beauty_shot</code> used exactly once</li>
+          <li>Zero keyword-only tagging violations detected</li>
+          <li>Full script preserved in chronological order</li>
+          <li>All verdict styling (color + bold) correctly applied</li>
+          <li>Diagnostics section complete and accurate</li>
+        </ul>
+
+        <h3>Success metrics</h3>
+        <div class="table-div">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Metric</th>
+                <th scope="col">Target</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Uncertain rate</th>
+                <td>&lt; 10% of visual units</td>
+              </tr>
+              <tr>
+                <th>Output refinement time</th>
+                <td>&lt; 10 minutes for the user</td>
+              </tr>
+              <tr>
+                <th>Semantic grouping</th>
+                <td>Clean, no split semantic units</td>
+              </tr>
+              <tr>
+                <th>Keyword-only violations</th>
+                <td>Zero tolerance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          A high uncertain rate (>10%) does not prevent output generation — it is a <em>quality failure</em>, not a critical failure. The output is still produced, with issues flagged in diagnostics for iteration.
+        </p>
+      </section>
+
+      <!-- SECTION 9: Error Handling -->
+      <section id="Error_Handling" class="main-section">
+        <header><a href="#Error_Handling">Error Handling</a></header>
+        <p>
+          BMP distinguishes between two failure categories, and they are handled very differently:
+        </p>
+
+        <h3>Critical failures (halt processing)</h3>
+        <p>
+          These prevent any output from being generated. The engine stops and requests user input:
+        </p>
+        <ul>
+          <li><strong>Unknown product type</strong> — Script content is ambiguous or covers multiple product types.</li>
+          <li><strong>Missing Tags List</strong> — Product type identified, but no Tags List file exists for it.</li>
+        </ul>
+        <pre class="overflow-x-auto"><span class="code-comment">// Example error for missing Tags List</span>
+"Smartwatch detected, but no
+BMP_Tags_List_Smartwatch file found.
+Currently supported: smartphones, TWS, tablets."</pre>
+        
+        <h3>Quality failures (proceed with flags)</h3>
+        <p>
+          These allow processing to complete, but issues are flagged in the diagnostics section:
+        </p>
+        <ul>
+          <li>High uncertain rate (>10%)</li>
+          <li>Potential keyword-only tagging detected</li>
+          <li>Ambiguous segmentation decisions</li>
+        </ul>
+        <p>
+          The rationale: the user needs the HTML output to iterate on. Halting over a quality issue would slow the workflow — better to deliver and flag, then fix in subsequent rounds.
+        </p>
+      </section>
+
+      <!-- SECTION 10: Extending BMP -->
+      <section id="Extending_BMP" class="main-section">
+        <header><a href="#Extending_BMP">Extending BMP</a></header>
+        <p>
+          BMP is designed for extensibility through its separation of core specification and product-specific Tags Lists. Adding support for a new product type does <em>not</em> require changing the BMP version.
+        </p>
+
+        <h3>Adding a new product type</h3>
+        <ol>
+          <li>Collect 3+ representative review scripts for the product type.</li>
+          <li>Analyze shooting patterns and identify recurring visual concepts.</li>
+          <li>Create <code class="code-inline">BMP_Tags_List_{ProductType}_v1.0.md</code> following the established table format.</li>
+          <li>Validate against the collected scripts. Target &lt;10% uncertain rate.</li>
+          <li>Promote to production-ready status after validation.</li>
+        </ol>
+
+        <h3>Evolving an existing Tags List</h3>
+        <p>
+          Tags Lists version independently from the BMP specification. When updating:
+        </p>
+        <ul>
+          <li>Increment the version number ( <code class="code-inline">v2.5</code> → <code class="code-inline">v2.6</code> ).</li>
+          <li>Document all changes in the Version History section of the file.</li>
+          <li>BMP will automatically detect and load the highest version.</li>
+        </ul>
+
+        <h3>When the core spec changes</h3>
+        <p>BMP version bumps only for architectural changes:</p>
+        <ul>
+          <li><strong>Patch</strong> (v2.1 → v2.2): Terminology fixes, clarifications, HTML styling tweaks.</li>
+          <li><strong>Major</strong> (v2.1 → v3.0): New pipeline stages, verdict system changes, structural overhauls.</li>
+        </ul>
+        <p>
+          Verdict changes affect all product types universally, so they always trigger a major version bump.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p><i>This documentation page is created as a part of a certification project on <a target="_blank" href="https://www.freecodecamp.org/"><img aria-hidden="true" class="logo-inline" src="https://design-style-guide.freecodecamp.org/img/fcc_primary_small.svg">freeCodeCamp</a>.</i></p>
+      <a id="github" href="https://github.com/gafiegarcia" title="Visit my GitHub profile!" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub"><span class="sr-only">Visit Gafie Garcia's GitHub profile</span></a>
+      <p>&copy; 2026 Gafie Garcia</p>
+    </footer>
+  </body>
+</html>

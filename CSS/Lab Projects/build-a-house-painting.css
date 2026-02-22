@@ -1,0 +1,310 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+#environment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(99,35%, 39%);
+  z-index: -1;
+}
+
+#sky {
+  height: 60%;
+  background-color: skyblue;
+}
+
+#house {
+  position: relative;
+  top: 5vh;
+  width: 500px;
+  height: 400px;
+  background-image: linear-gradient(hsl(32, 27%, 90%), hsl(32, 63%, 84%));
+  background-color: hsl(32, 63%, 84%);
+  border: 3px solid hsl(32, 63%, 55%);
+}
+
+#house > * {
+  position: absolute;
+}
+
+
+/* ROOF & CHIMNEY */
+
+#chimney {
+  width: 100px;
+  height: 115px;
+  border: 3px solid hsl(32, 63%, 36%);
+  background-color: hsl(0, 63%, 45%);
+  background: linear-gradient(225deg, hsl(32, 63%, 55%), hsl(32, 63%, 45%));
+  right: 40px;
+  top: -115px;
+  z-index: -1; /* DON'T FORGET CHANGE TO -1 */
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 4px;
+  gap: 4px 4px;
+}
+
+#chimney #chimney-smokes {
+  position: absolute;
+  background: none;
+  outline: 1px slid red;
+  width: 120px;
+  height: 90px;
+  top: -116px;
+  left: -9px;
+}
+
+#chimney-smokes .cs {
+  position: absolute;
+  background-color: whitesmoke;
+  border-radius: 50%;
+}
+
+#cs1 {
+  bottom: 0;
+  left: 40px;
+  width: 35px;
+  height: 40px;
+  transform: rotate(30deg);
+}
+
+#cs2 {
+  bottom: 20px;
+  right: 18px;
+  width: 60px;
+  height: 50px;
+  transform: rotate(50deg);
+}
+
+#cs3 {
+  top: 0;
+  right: 0px;
+  width: 45px;
+  height: 50px;
+  transform: rotate(deg)
+}
+
+#chimney > div {
+  outline: 1px slid red; /* DON'T FORGET TO DELETE */
+  flex-basis: 20%;
+  flex-shrink: 1;
+  height: 13%;
+  background-color: hsl(32, 63%, 36%)
+}
+
+#chimney .chimney-top {
+
+  width: 110px;
+  height: 20px;
+  top: -23px;
+  left: -8px;
+  position: absolute;
+  background-color: hsl(32, 63%, 32%);
+}
+
+#chimney .grow {
+  flex-basis: 30%;
+  flex-grow: 1;
+}
+
+#roof {
+  top: 0;
+  margin-top: -3px;
+  margin-left: -3px;
+  width: calc(100% + 6px);
+  height: 86px;
+  background: repeating-linear-gradient(45deg, hsl(32, 63%, 45%),  hsl(32, 63%, 65%) 8px, hsla(32, 63%, 55%, 0.1) 8px, hsla(32, 63%, 55%, 0.1) 20px), repeating-linear-gradient(-45deg, hsl(32, 63%, 45%),  hsl(32, 63%, 65%) 8px, hsla(32, 63%, 55%, 0.1) 8px, hsla(32, 63%, 55%, 0.1) 20px);
+  border: 3px solid hsl(32, 63%, 55%);
+}
+
+#roof::after {
+  position: absolute;
+  top: -120px;
+  left: -52px;
+  content: "";
+  display: block;
+  border-right: 300px solid transparent;
+  border-left: 300px solid transparent;
+  border-bottom: 130px solid hsl(32, 63%, 29%);
+}
+
+
+/* WINDOWS (literally, not the OS... */
+
+/* Stupid freeCodeCamp requirements wouldn't allow me to use class selector, as the system only detects ID (which they dictated) selectors
+.window {
+  background: linear-gradient(135deg,hsl(32, 63%, 60%) 50%, hsl(32, 63%, 50%));
+  width: 90px;
+  height: 100px;
+  top: 180px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  row-gap: 5px;
+  column-gap: 5px;
+}
+*/
+
+#window-1 {
+  left: 50px;
+  background: linear-gradient(135deg,hsl(32, 63%, 60%) 50%, hsl(32, 63%, 50%));
+  width: 90px;
+  height: 100px;
+  top: 190px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  row-gap: 5px;
+  column-gap: 5px;
+  border: 2px solid hsl(32, 63%, 55%);
+}
+
+#window-2 {
+  right: 45px;
+  background: linear-gradient(135deg,hsl(32, 63%, 60%) 50%, hsl(32, 63%, 50%));
+  width: 90px;
+  height: 100px;
+  top: 190px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  row-gap: 5px;
+  column-gap: 5px;
+  border: 2px solid hsl(32, 63%, 55%);
+}
+
+
+.window-glasses {
+  width: 34px;
+  height: 40px;
+  background: linear-gradient(135deg,hsl(195, 63%, 62%) 50%, hsl(195, 63%, 52%));
+  border-style: solid;
+  border-width: 3px 2px 2px 3px;
+  border-color: hsl(195, 63%, 37%);
+  padding: 3px;
+}
+
+.window-glasses::before {
+  display: block;
+  content: "";
+  width: 25%;
+  height: 25%;
+  border-radius: 2px;
+  border-top: 3px solid hsla(0, 0%,100%, 1);
+  border-left: 3px solid hsla(0, 0%,100%, 1);
+  filter: blur(2px);
+}
+
+
+/* DOOR AREA */
+/*  Note that #awning is a child of door, even though it's positioned outside it. This way, its position will always be relative to the door */
+
+#door {
+  left: 38%;
+  position: absolute;
+  width: 120px;
+  height: 220px;
+  background-color: hsl(32, 63%, 55%);
+  bottom: 0;
+  
+  border: 1px solid hsl(32, 63%, 55%);
+}
+
+#door-inner {
+  position: absolute;
+  width: 100px;
+  height: 210px;
+  border-style: solid;
+  border-width: 6px 4px 3px 6px;
+  border-color: hsl(195, 63%, 35%);
+  bottom: 0;
+  left: 9px;
+  background-color: hsl(195, 63%, 55%);
+}
+
+#door-knob {
+  position: absolute;
+  left: 25px;
+  bottom: 100px;
+  background-color: hsl(32, 63%, 55%);
+  border: 2px solid hsl(32, 63%, 35%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#door-knob-reflection {
+  top: 0;
+  left: 1px;
+  position: absolute;
+  width: 65%;
+  height: 65%;
+  background-color: hsla(60, 100%, 66%, 0.6);
+  border-radius: 50%;
+}
+
+#awning {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  overflow: hidden;
+  width: 200px;
+  height: 70px;
+  top: -55px;
+  left: -40px;
+}
+
+#awning-surface {
+  position: relative;
+  margin-top: -10px;
+  background: repeating-linear-gradient(to right, hsl(32, 63%, 45%), hsl(32, 63%, 55%) 10px, hsl(32, 27%, 85%) 10px, hsl(32, 63%, 85%) 20px);
+  width: 170px;
+  height: 50px;
+  transform: perspective(150px) rotateX(45deg);
+  z-index: 2;
+  box-shadow: 0 0 10px -2px#0008;
+}
+
+#awning-bulb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: hsl(60, 100%, 50%);
+  border-radius: 50%;
+  top: 10px;
+  filter: blur(1px);
+  box-shadow: 0 5px 20px 10px yellow;
+  z-index: 1;
+}
+
+#awning-shadow {
+  position: absolute;
+  background-color: #0005;
+  width: 150px;
+  height: 10px;
+  top: 35px;
+  left: 25px;
+  transform: perspective(150px) rotateX(-45deg);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  filter: blur(10px);
+  z-index: 0;
+}

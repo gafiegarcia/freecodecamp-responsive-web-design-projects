@@ -1,0 +1,81 @@
+/* ** start of styles.css ** */
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #e6d8cf;
+}
+
+.bg-card {
+  background-color: #fff4ed;
+  width: 80%;
+  height: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  font-family: Inter Variable Text, sans-serif;
+  border-radius: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #0e3a87;
+}
+
+a:visited {
+  color: #69768c;
+}
+
+a:hover {
+  color: #8c3903;
+}
+
+a:active {
+  color: darkorange;
+}
+
+a:focus {
+  outline: 2px solid #8c3903;
+}
+
+.todo-list {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.todo-list > li {
+  background-color: #ffe6d6;
+  margin: 1rem;
+  border-radius: 1rem;
+  list-style: inside none;
+  padding:15px;
+}
+
+.todo-list input {
+  cursor: pointer;
+  transform: scale(1.3);
+  margin-right: 5px;
+}
+
+.sub-item {
+  list-style: inside square;
+  margin: 1rem 1.5rem 0.5rem;
+  padding: 0 px;
+
+}
+
+.checkbox
+
+/* ** end of styles.css ** */

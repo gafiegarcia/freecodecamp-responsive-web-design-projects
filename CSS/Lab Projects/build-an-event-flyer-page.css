@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+}
+
+html {
+  background: #222225;
+}
+
+body {
+  font-family: "garamond premier pro", Lora, serif;
+  background-color: #151515;
+  color: #fafafa;
+  text-align: center;
+  padding: 50px 0;
+  margin: 0 auto;
+  width: 75vw;
+  min-height: calc(100vh - 100px);
+}
+
+#java-jazz-logo {
+  margin: 0 auto 10px;
+  max-width: 150px;
+  height: auto;
+}
+
+header {
+  padding: 0 10%;
+  margin-bottom: 50px;
+}
+
+hr {
+  margin: 2rem auto;
+  font-family: "garamond premier pro", Lora, serif;
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 280%;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 200%;
+}
+
+p {
+  font-family: "Zalando Sans", "General Sans", sans-serif;
+}
+
+a {
+  color: darkgray;
+}
+
+a:active {
+  color: darkorange;
+}
+
+h1 > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 > a:hover {
+  text-decoration: underline;
+}
+
+.italic {
+  font-style: italic;
+  font-family: inherit;
+}
+
+.pre-title {
+  font-size: 150%;
+  margin-bottom: -10px;
+}
+
+section {
+  width: 65%;
+}
+
+.pseudo-grid {
+  display: block;
+  max-width: 700px;
+  text-align: left;
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 0 1em 0.5em;
+  margin: 0 auto 2em;
+}
+
+.pseudo-grid.two {
+  text-align: right;
+  border-left: none;
+  border-right: 1px solid gray;
+}
+
+.pseudo-grid p {
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  margin-top: 50px;
+  margin-bottom: 0;
+  padding: 0 10%;
+}
+
+footer p {
+  font-family: "garamond premier pro", lora;
+}

@@ -1,0 +1,48 @@
+** start of index.html **
+
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Movie Review</title>
+ </head>
+
+<body>
+    <main>
+        <h1>Hayate the Combat Butler</h1>
+        <img width="500" src="https://animefreakjapan.com/wp-content/uploads/2025/02/image-4-166.jpg" alt="Hayate the Combat Butler anime cover image">
+        
+        <p>
+            The manga, which got adapted to the anime, is about a boy who starts a new job as a butler and the events he experiences with his employer. The style of the manga has a comedic gag with a slight harem feel and constantly breaks the fourth wall. The series includes numerous references to other anime, manga, video games, and popular culture.
+        </p>
+        
+        <p>
+            <strong>Movie Rating:</strong>
+            <span aria-hidden="true">⭐⭐⭐⭐⭐⭐⭐☆☆☆</span>
+            (7.5/10)
+        </p>
+
+        <hr>
+        <h2>Cast Members</h2>
+        <ul>
+            <li>
+                <strong>Shiraishi, Ryouko</strong>
+                as Ayasaki, Hayate
+            </li>
+            <li>
+                <strong>Tanaka, Rie</strong>
+                as Maria
+            </li>
+            <li>
+                <strong>Kugimiya, Rie</strong>
+                as Sanzenin, Nagi
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>
+
+** end of index.html **
+

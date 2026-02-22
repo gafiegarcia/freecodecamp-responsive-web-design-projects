@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Availability Table</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <!-- My Stylesheet-->
+  <link rel="stylesheet" href="build-an-availability-table-v0.css">
+</head>
+
+<body>
+  <header>
+    <h1>Employee Availability</h1>
+  </header>
+
+  <main>
+    <h2 id="month-year-label"><time datetime="2026-02">February 2026</time><span class="sr-only"> Employee Availability Table</span></h2>
+    <div class="table-div">
+      <table aria-describedby="month-year-label">
+        <thead>
+          <tr>
+            <th scope="col" class="sr-only">Time</th>
+            <th scope="col">Mon<span class="sr-only">day</span> <span class="date">9</span><span class="sr-only">th</span></th>
+            <th scope="col">Tue<span class="sr-only">sday</span> <span class="date">10</span><span class="sr-only">th</span></th>
+            <th scope="col">Wed<span class="sr-only">nesday</span> <span class="date">11</span><span class="sr-only">th</span></th>
+            <th scope="col">Thu<span class="sr-only">rsday</span> <span class="date">12</span><span class="sr-only">th</span></th>
+            <th scope="col">Fri<span class="sr-only">day</span> <span class="date">13</span><span class="sr-only">th</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="sharp">
+            <th scope="row" class="time"><time datetime="09:00">09:00</time></th>
+            <td class="available-2"></td>
+            <td class="available-3"></td>
+            <td class="available-3"></td>
+            <td class="available-2"></td>
+            <td class="available-1"></td>
+          </tr>
+          <tr class="half">
+            <th scope="row" class="time"><time datetime="09:30">09:30</time></th>
+            <td class="available-3"></td>
+            <td class="available-3"></td>
+            <td class="available-4"></td>
+            <td class="available-3"></td>
+            <td class="available-2"></td>
+          </tr>
+          <tr class="sharp">
+            <th scope="row" class="time"><time datetime="10:00">10:00</time></th>
+            <td class="available-4"></td>
+            <td class="available-5"></td>
+            <td class="available-4"></td>
+            <td class="available-4"></td>
+            <td class="available-3"></td>
+          </tr>
+          <tr class="half">
+            <th scope="row" class="time"><time datetime="10:30">10:30</time></th>
+            <td class="available-4"></td>
+            <td class="available-5"></td>
+            <td class="available-5"></td>
+            <td class="available-4"></td>
+            <td class="available-4"></td>
+          </tr>
+          <tr class="sharp">
+            <th scope="row" class="time"><time datetime="11:00">11:00</time></th>
+            <td class="available-5"></td>
+            <td class="available-4"></td>
+            <td class="available-5"></td>
+            <td class="available-5"></td>
+            <td class="available-3"></td>
+          </tr>
+          <tr class="half">
+            <th scope="row" class="time"><time datetime="11:30">11:30</time></th>
+            <td class="available-4"></td>
+            <td class="available-4"></td>
+            <td class="available-4"></td>
+            <td class="available-5"></td>
+            <td class="available-3"></td>
+          </tr>
+          <tr class="sharp">
+            <th scope="row" class="time"><time datetime="12:00">Noon</time></th>
+            <td class="available-1"></td>
+            <td class="available-2"></td>
+            <td class="available-1"></td>
+            <td class="available-2"></td>
+            <td class="available-1"></td>
+          </tr>
+          <tr class="half">
+            <th scope="row" class="time"><time datetime="12:30">12:30</time></th>
+            <td class="available-1"></td>
+            <td class="available-1"></td>
+            <td class="available-0"></td>
+            <td class="available-1"></td>
+            <td class="available-0"></td>
+          </tr>
+          <tr class="sharp">
+            <th scope="row" class="time"><time datetime="13:00">13:00</time></th>
+            <td class="available-3"></td>
+            <td class="available-2"></td>
+            <td class="available-3"></td>
+            <td class="available-3"></td>
+            <td class="available-2"></td>
+          </tr>
+          <tr class="half">
+            <th scope="row" class="time"><time datetime="13:30">13:30</time></th>
+            <td class="available-4"></td>
+            <td class="available-4"></td>
+            <td class="available-3"></td>
+            <td class="available-4"></td>
+            <td class="available-2"></td>
+          </tr>
+          <tr class="sharp">
+            <th scope="row" class="time"><time datetime="14:00">14:00</time></th>
+            <td class="available-5"></td>
+            <td class="available-4"></td>
+            <td class="available-4"></td>
+            <td class="available-5"></td>
+            <td class="available-3"></td>
+          </tr>
+          <tr class="half">
+            <th scope="row" class="time"><time datetime="14:30">14:30</time></th>
+            <td class="available-4"></td>
+            <td class="available-5"></td>
+            <td class="available-4"></td>
+            <td class="available-4"></td>
+            <td class="available-3"></td>
+          </tr>
+          <tr class="sharp">
+            <th scope="row" class="time"><time datetime="15:00">15:00</time></th>
+            <td class="available-3"></td>
+            <td class="available-4"></td>
+            <td class="available-3"></td>
+            <td class="available-3"></td>
+            <td class="available-2"></td>
+          </tr>
+          <tr class="half">
+            <th scope="row" class="time"><time datetime="15:30">15:30</time></th>
+            <td class="available-3"></td>
+            <td class="available-3"></td>
+            <td class="available-2"></td>
+            <td class="available-3"></td>
+            <td class="available-2"></td>
+          </tr>
+          <tr class="sharp">
+            <th scope="row" class="time"><time datetime="16:00">16:00</time></th>
+            <td class="available-2"></td>
+            <td class="available-2"></td>
+            <td class="available-2"></td>
+            <td class="available-2"></td>
+            <td class="available-1"></td>
+          </tr>
+          <tr class="half">
+            <th scope="row" class="time"><time datetime="16:30">16:30</time></th>
+            <td class="available-1"></td>
+            <td class="available-2"></td>
+            <td class="available-1"></td>
+            <td class="available-1"></td>
+            <td class="available-1"></td>
+          </tr>
+          <tr class="sharp">
+            <th scope="row" class="time"><time datetime="17:00">17:00</time></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="legend">
+      <span>Availability</span>
+      <div id="legend-gradient">
+        <span id="legend-0">0</span>
+        <span id="legend-1">1</span>
+        <span id="legend-2">2</span>
+        <span id="legend-3">3</span>
+        <span id="legend-4">4</span>
+        <span id="legend-5">5</span>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
