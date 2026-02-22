@@ -1,0 +1,278 @@
+/* VARIABLES */
+:root {
+  --color-text: hsl(212 1 8);
+  --color-text--muted: hsl(212 1 28);
+  --color-bg: hsl(212 1 100);
+  --color0: hsl(2, 90%, 60%);
+  --color1: hsl(60, 96%, 90%);
+  --color2: hsl(120, 92%, 90%);
+  --color3: hsl(120, 92%, 72%);
+  --color4: hsl(120, 92%, 39%);
+  --color5: hsl(120, 92%, 25%);
+  --solid-border: 1px solid hsl(212 1 20);
+  --dashed-border: 1px dashed hsl(212 1 20);
+  --layout-border: 1px solid hsl(212 1 20);
+}
+
+/* RESETS */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* LAYOUT */
+html {
+  background-color: var(--color-bg);
+  padding: 0 2rem;
+}
+
+body {
+  font-family: Figtree, sans-serif;
+  color: var(--color-text);
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--color-bg);
+  border-right: var(--layout-border);
+  border-left: var(--layout-border);
+}
+
+header {
+  border-bottom: var(--layout-border);
+  padding: 1rem;
+  line-height: 1;
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+#month-year-label {
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+#month-year-label::before {
+  content: "📅";
+  margin-inline-end: 0.25em;
+}
+
+/* Tables */
+.table-div {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  position: relative;
+}
+
+th {
+  padding: 0 0.25em 0 0;
+  font-weight: 600;
+}
+
+thead th {
+  position: relative;
+}
+
+thead .date {
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+  color: var(--color-text--muted);
+  font-size: 0.75em;
+}
+
+tbody th {
+  position: relative;
+  top: -1.5em;
+  font-size: 0.75rem;
+}
+
+tbody th:last-child {
+  top: -0.75em;
+}
+
+
+td {
+  width: 200px;
+  padding: 1.125em;
+  border-right: var(--layout-border);
+  border-left: var(--layout-border);
+}
+
+.sharp td {
+  border-bottom: var(--dashed-border);
+}
+
+.half td {
+  border-bottom: var(--solid-border);
+}
+
+  /* special half-hour visually hidden */
+tbody tr:nth-child(2n) th {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+  /* data cell color */
+.available-0 {
+  background-color: var(--color0);
+}
+
+.available-1 {
+  background-color: var(--color1);
+}
+
+.available-2 {
+  background-color: var(--color2);
+}
+
+.available-3 {
+  background-color: var(--color3);
+}
+
+.available-4 {
+  background-color: var(--color4);
+}
+
+.available-5 {
+  background-color: var(--color5);
+}
+
+/* Legend */
+#legend {
+  border: var(--layout-border);
+  border-radius: 5px;;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+#legend-gradient {
+  position: relative;
+  width: 150px;
+  height: 30px;
+  margin: 0.5rem auto;
+  background: linear-gradient(
+    to right,
+    var(--color0) 0%, 
+    var(--color0) 17%, 
+    var(--color1) 17%,
+    var(--color1) 33%,
+    var(--color2) 33%,
+    var(--color2) 50%,
+    var(--color3) 50%,
+    var(--color3) 67%,
+    var(--color4) 67%,
+    var(--color4) 83%,
+    var(--color5) 83%,
+    var(--color5)
+  );
+}
+
+#legend-0 {
+  position: absolute;
+  display: inline-block;
+  top: 0.3125em;
+  left: 0.4375em;
+}
+
+#legend-1 {
+  position: absolute;
+  display: inline-block;
+  top: 0.3125em;
+  left: calc(26px + 0.4375em);
+}
+
+#legend-2 {
+  position: absolute;
+  display: inline-block;
+  top: 0.3125em;
+  left: calc(50px + 0.4375em);
+}
+
+#legend-3 {
+  position: absolute;
+  display: inline-block;
+  top: 0.3125em;
+  left: calc(76px + 0.4375em);
+}
+
+#legend-4 {
+  position: absolute;
+  display: inline-block;
+  top: 0.3125em;
+  right: calc(26px + 0.4375em);
+}
+
+#legend-5 {
+  position: absolute;
+  display: inline-block;
+  top: 0.3125em;
+  right: 0.5em;
+  color:hsl(from var(--color-text) h s 97%)
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 640px) {
+  html {
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  header {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  table {
+    min-width: 400px; 
+  }
+
+  thead {
+    font-size: 0.875em;
+  }
+
+  thead .date {
+    left: 2px;
+  }
+}
+
+
+/* Utilities */
+  /* Tailwind CSS sr-only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -1,0 +1,332 @@
+/* VARIABLES */
+:root {
+  --text-color: hsl(0, 1%, 25%);
+  --text-color--hero: hsl(48, 1%, 8%);
+  --text-color--muted: hsl(0, 0%, 58%);
+  --bg-color--hero: hsl(48, 90%, 60%);
+  --bg-color--body: hsl(0, 0%, 98%);
+  --bg-color--newspaper: transparent;
+  --bg-color--feature: hsl(48, 0%, 100%);
+  --bg-color--small: hsl(48, 0%, 100%);
+  --padding--hero: 1rem;
+  --padding--feature: 1.75rem 1.5rem;
+  --padding--articles: 1.25rem 1rem;
+  --padding--article-title: 0 0 0.75rem;
+  --border--articles: 1px solid var(--bg-color--hero);
+}
+
+/* RESETS AND DEV */
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 1px soid gray;
+}
+
+
+/* GLOBAL STYLES */
+html {}
+
+body {
+  max-width: 1120px;
+  display: grid;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  color: var(--text-color);
+  font-family: 'Zalando Sans', sans-serif;
+  background: var(--bg-color--body);
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3 {
+  font-family: Montserrat, sans-serif;
+  color: var(--text-color--hero);
+}
+
+h2 {
+  font-size: 1.625rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:focus {
+  outline-offset: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+
+/* LAYOUT & their objects*/
+.newspaper-layout {
+  display: grid;
+  grid-template-areas:
+    "title title title" 
+    "feature-article feature-article cover-image"
+    "secondary-article secondary-article cover-image"
+    "small-article1 small-article2 small-article3";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto repeat(3, 1fr);
+  gap: 2rem;
+  background: var(--bg-color--newspaper);
+  margin-bottom: 6rem;
+}
+
+  /* title a.k.a. the header */
+.title {
+  grid-area: title;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  background-color: var(--bg-color--hero);
+  padding: var(--padding--hero);
+  text-align: center;
+}
+
+.title h1 {
+  grid-column: 2;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.title p {
+  color: var(--text-color--hero);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.day {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.date {
+  opacity: 0.9;
+}
+
+/* everything below .title: articles, cover-image, and footer */
+
+  /* stand-out box-shadow and border */
+.feature-article,
+.cover-image,
+.secondary-article {
+  border-top: var(--border--articles);
+  border-left: var(--border--articles);
+  box-shadow: 6px 6px 0 var(--bg-color--hero);
+  background: var(--bg-color--feature);
+}
+
+  /* special padding for feature and secondary to make them stand-out more */
+.feature-article,
+.secondary-article {
+  padding: var(--padding--feature);
+}
+
+  /* small articles styling */
+.small-article1,
+.small-article2,
+.small-article3 {
+  border: var(--border--articles);
+  padding: var(--padding--articles);
+  background: var(--bg-color--small);
+}
+
+  /* article elements styling */
+:is(.feature-article,
+.secondary-article,
+.small-article1,
+.small-article2,
+.small-article3) > :is(h2, h3) {
+  margin-bottom: 0.75rem;
+  padding: var(--padding--article-title);
+  border-bottom: 1px solid var(--bg-color--hero);
+}
+
+.article-metadata {
+  text-transform: uppercase;
+  color: var(--text-color--muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+  /* main grid items styling */
+.feature-article {
+  grid-area: feature-article;
+}
+
+.cover-image {
+  grid-area: cover-image;
+  display: grid;
+  place-items: start;
+  padding: 2rem 0;
+  min-height: 0;
+}
+
+.cover-image img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.secondary-article {
+  grid-area: secondary-article;  
+}
+
+.small-article1 {
+  grid-area: small-article1;  
+  
+}
+
+.small-article2 {
+  grid-area: small-article2;  
+}
+
+.small-article3 {
+  grid-area: small-article3;  
+}
+
+.newspaper-layout + hr {
+  border: none;
+  border-bottom: 1px dashed var(--text-color--muted);
+  margin-bottom: 4rem;
+  height: 1px;
+}
+
+/* FOOTER — where I embrace my narcissism */
+footer {
+  text-align: center;
+  width: 100%;
+  padding: 2.5rem 1.5rem 1.5rem;
+  background: var(--bg-color--hero);
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+footer p:last-child {
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: var(--text-color--muted);
+}
+
+#github {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#github img {
+  display: block;
+  width: 75px;
+  height: auto;
+  object-fit: contain;
+  padding: 12px;
+  filter: brightness(400%) saturate(0%);
+  transition: filter 0.5s ease-out, transform 0.3s ease;
+}
+
+#github:hover img {
+  filter: brightness(200%) saturate(100%);
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 93.75%;
+  }
+
+  h2 {
+  font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
+
+
+  .cover-image img {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 299px) {
+  .newspaper-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "title"
+      "cover-image"
+      "feature-article"
+      "secondary-article"
+      "small-article1"
+      "small-article2"
+      "small-article3"
+    ;
+  }
+  
+  .cover-image {
+    place-items: center;
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+}
+
+/* UTILITIES */
+.logo-inline {
+  height: auto;
+  width: 1rem;
+  vertical-align: text-top;
+  margin-inline-end: 0.1875rem;
+}
+
+aside {
+  font-style: italic;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

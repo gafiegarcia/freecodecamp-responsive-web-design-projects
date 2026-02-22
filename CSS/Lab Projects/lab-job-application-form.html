@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="./lab-job-application-form.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="center">Job Application Form</h1>
+        <form>
+            <label for="name">Full Name: </label>
+            <input type="text" id="name" name="name" required maxlength="60" minlength="3">
+
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="position">Position To Apply</label>
+            <select id="position" name="position" required>
+                <option value="">--Please select an option--</option>
+                <option value="Shop Manager">Shop Manager</option>
+                <option value="Barista">Barista</option>
+                <option value="Waiter/Waitress">Waiter/Waitress</option>
+            </select>
+
+            <fieldset class="radio-group center">
+                <legend>Availability</legend>
+                <div>
+                    <input type="radio" name="availability" id="weekdays" value="Weekdays" checked class="radio-btn">
+                    <label for="weekdays">Weekdays</label>
+                </div>
+                <div>
+                    <input type="radio" name="availability" id="weekends" value="Weekends" class="radio-btn">
+                    <label for="weekends">Weekends</label>
+                </div>
+            </fieldset>
+
+            <label for="message">Why do you want this job?</label>
+            <textarea id="message" placeholder="Write your motivation, purposes, life goals, or anything you think is relevant here..." rows="5" required></textarea>
+
+            <button type="submit">Submit Form</button>
+        </form>
+    </div>
+</body>
+</html>

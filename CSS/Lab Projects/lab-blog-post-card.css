@@ -1,0 +1,61 @@
+body {
+  background: gainsboro;
+  font-family: Inter Variable Text, sans-serif;
+}
+
+.blog-post-card {
+  background: white;
+  border-radius: 15px;
+  margin: auto;
+  width: 60%;
+  max-width: 400px;
+  text-align: center;
+  filter: drop-shadow(0 0 4px gray);
+  overflow: hidden;
+  
+}
+
+.post-img {
+  width: 100%;
+  border-bottom: 4px solid darkslategray;
+  margin: 0;
+}
+
+.read-more {
+  background-color: darkslategray;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 7px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  background: slategray;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: darkslategray;
+}
+
+.post-content {
+  padding: 10px 25px;
+  margin: 5px;
+  line-height: normal;
+}
+
+.post-title {
+  margin: 10px;
+  color: darkslategray;
+}
+
+.post-excerpt {
+  margin: 10px;
+  color: slategray;
+  font-size: 15px;
+}

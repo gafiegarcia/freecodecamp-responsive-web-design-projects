@@ -1,0 +1,121 @@
+html {
+  font-size: 24px;
+}
+
+.newspaper {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.name {
+  font-size: 2rem;
+  font-family: "Times New Roman", serif;
+}
+
+.name, .author {
+  text-transform: uppercase;
+}
+
+.headline {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.sub-headline {
+  font-weight: 100;
+  font-size: 1.125em;
+  font-style: italic;
+}
+
+.author {
+  font-weight: bold;
+}
+
+.text {
+  text-indent: 20px;
+  line-height: 2em;
+}
+
+.text::first-letter {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+/* This marks the end of the less-flavorful-but-technically-educating requirements from the freeCodeCamp lab session
+
+...and here comes my own styling */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0.67rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(36, 100%, 38%);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-bottom: 2px solid hsl(36, 75%, 30%);
+}
+
+body {
+  background-color: hsl(36, 50%, 75%);
+  /* This is part of an attempt
+  overflow: auto;
+  ...to make the .name element sticky */
+}
+
+.newspaper {
+  width: 80%;
+  margin: 100px auto;
+  max-width: 777px;
+  background-color: #fffa;
+  padding: 20px 40px 40px;
+  box-shadow: 0 0 5px #2222;
+  border-radius: 3px;
+  /* I tried 
+  overflow: hidden;
+   ...but didn't succeed */ 
+}
+
+.name {
+  margin-top: 1em;
+  text-align: center;
+  /* epic
+  position: sticky;
+  top: 20px;
+  fail */
+}
+
+.date {
+  text-align: center;
+  margin-top: -0.2em;
+}
+
+.headline {
+  margin: 1.2em auto 0.8em;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.sub-headline {
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  padding: 0 1em;
+}
+
+.author {
+  text-align: center;
+  margin-bottom: 1.5rem;
+} 

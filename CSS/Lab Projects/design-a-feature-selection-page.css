@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Manrope v5", sans-serif;
+  text-align: center;
+  height: calc(100vh - 120px);
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(white, hsl(195, 80%, 95%)) no-repeat;
+}
+
+h1 {
+  margin-top: 120px;
+}
+
+.feature-card-container {
+  margin: 0 auto;
+  padding: 25px;
+}
+
+label {
+  display: inline-block;
+  margin: 0 10px 20px;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  width: 210px;
+  position: relative;
+}
+
+label:hover, label:focus-within {
+  box-shadow: 0 0 10px 0 hsla(195, 80%, 50%, 0.6);
+  border-color: skyblue;
+  cursor: pointer;
+}
+
+label:has(input:checked) {
+  border-color: skyblue;
+}
+
+h2 {
+  font-size: 1.1rem;
+  display: inline-block;
+  font-weight: 600;
+  margin: 0;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  display: block;
+  position: absolute;
+  bottom: 53px;
+  left: 218px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+  background-color: lightskyblue;
+  border-color: lightskyblue;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  font-weight: 700;
+  color: white;
+  display: block;
+  text-align: center;
+}
+
+input[type="checkbox"]:hover {
+  border-color: skyblue;
+}
+
+input[type="checkbox"]:focus {
+  border-color: skyblue;
+  outline: none;
+}
