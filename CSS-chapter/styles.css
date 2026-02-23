@@ -2,12 +2,21 @@
 * VARIABLES
 */
 :root {
+  --monospace: 'Geist Mono', monospace;
   --transition-speed: 0.3s;
+  --accent-color: ;
+  --text-color: ;
+  --bg-color: ;
 }
 
 /* 
 * HEADER
 */
+
+header {
+  position: fixed;
+  top: 0;
+}
 
 #profile-link svg {
   width: 2.5rem;
@@ -39,6 +48,14 @@
 /* 
 * UTILITIES
 */
+.italic {
+  font-style: italic;
+}
+
+.monospace {
+  font-family: var(--monospace);
+}
+
 .logo-inline {
   height: auto;
   width: 1rem;
