@@ -1,0 +1,58 @@
+/* 
+* VARIABLES
+*/
+:root {
+  --transition-speed: 0.3s;
+}
+
+/* 
+* HEADER
+*/
+
+#profile-link svg {
+  width: 2.5rem;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(300%) saturate(0%);
+  transition: filter var(--transition-speed) ease-out, transform var(--transition-speed) ease-out;
+}
+
+#profile-link:hover svg {
+  filter: brightness(100%) saturate(100%);
+  transform: scale(1.04);
+}
+
+/* 
+* MAIN
+*/
+
+#welcome-section {
+  min-height: 100vh;
+}
+
+/* 
+* RESPONSIVE DESIGN
+*/
+
+@media screen and (min-width: 768px) {}
+
+/* 
+* UTILITIES
+*/
+.logo-inline {
+  height: auto;
+  width: 1rem;
+  vertical-align: text-top;
+  margin-inline-end: 0.1875rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
