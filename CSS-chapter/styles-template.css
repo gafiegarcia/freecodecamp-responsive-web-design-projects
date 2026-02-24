@@ -48,6 +48,7 @@ input, button, textarea, select {
   --monospace: 'Geist Mono', monospace; /* monospace font setting */
   --transition-speed: 0.3s;
   --container-max-width: 1200px;
+  --container-padding: 1.5rem;
 }
 
 /* theme-switching variables goes here */
@@ -72,6 +73,7 @@ body {
   max-width: var(--container-max-width);
   width: 100%;
   margin-inline: auto;
+  padding-inline: var(--container-padding);
 }
 
 /* ================================
