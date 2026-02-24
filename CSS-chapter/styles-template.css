@@ -200,7 +200,11 @@ header {
   font-family: var(--monospace);
 }
 
+/* component sample
+<img aria-hidden="true" class="logo-inline" src="https://design-style-guide.freecodecamp.org/img/fcc_secondary_small.svg">
+*/
 .logo-inline {
+  display: inline;
   height: auto;
   width: 1rem;
   vertical-align: text-top;
