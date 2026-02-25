@@ -188,11 +188,18 @@ header {
   padding-inline: var(--container-padding);
 }
 
+/* logo and its animation (mobile, tablet, and desktop */
 .logo {
   text-decoration: none;
   font-size: 3rem;
   font-family: 'Zalando Sans SemiExpanded';
   font-weight: 600;
+}
+
+.logo .animate-in-container {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
 }
 
 @keyframes logo-animate-out {
@@ -204,29 +211,15 @@ header {
   }
 }
 
-.logo .animate-out-container {
+.logo .animate-in {
   display: inline-block;
-  overflow: hidden;
-  vertical-align: bottom;
+  animation: logo-animate-out 1.4s ease 5s 1 backwards;
+  transform: translate(-100%);
+  transition: transform 0.7s ease;
 }
 
-.logo .animate-out {
-  display: inline-block;
-  animation: logo-animate-out 1s ease 2s 1 forwards;
-  transition: transform 1s;
-}
-
-@keyframes logo-animate-in {
-  from {
-    transform: translate(-100%);
-  }
-  to {
-    transform: translate(0);
-  }
-}
-
-.logo:hover .animate-out {
-  animation: logo-animate-in 1s ease;
+.logo:is(:hover, :focus, :active) .animate-in {
+  transform: translate(0);
 }
 
 /* 
