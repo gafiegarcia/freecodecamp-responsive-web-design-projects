@@ -97,6 +97,22 @@ section h2 {
    ================================ 
 */
 
+/* My name-logo */
+.logo {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 3rem;
+  font-family: 'Zalando Sans SemiExpanded';
+  font-weight: 600;
+  line-height: 1;
+}
+
+.logo .animate-in-container {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
 /* My custom radio button 1 */
 .radio-btn {
   appearance: none;
@@ -193,19 +209,7 @@ header {
   padding-inline: var(--container-padding);
 }
 
-/* logo and its animation (mobile, tablet, and desktop */
-.logo {
-  text-decoration: none;
-  font-size: 3rem;
-  font-family: 'Zalando Sans SemiExpanded';
-  font-weight: 600;
-}
-
-.logo .animate-in-container {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: bottom;
-}
+/* header logo and its animation (mobile, tablet, and desktop */
 
 @keyframes logo-animate-out {
   from {
