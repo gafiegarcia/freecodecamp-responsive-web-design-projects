@@ -67,6 +67,10 @@ body {
   font-weight: 300;
 }
 
+a {
+  color: inherit;
+}
+
 section h2 {
   margin-bottom: 1rem;
 }
@@ -181,6 +185,48 @@ section h2 {
 header {
   position: fixed;
   top: 0;
+  padding-inline: var(--container-padding);
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 3rem;
+  font-family: 'Zalando Sans SemiExpanded';
+  font-weight: 600;
+}
+
+@keyframes logo-animate-out {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-100%);
+  }
+}
+
+.logo .animate-out-container {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.logo .animate-out {
+  display: inline-block;
+  animation: logo-animate-out 1s ease 2s 1 forwards;
+  transition: transform 1s;
+}
+
+@keyframes logo-animate-in {
+  from {
+    transform: translate(-100%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+.logo:hover .animate-out {
+  animation: logo-animate-in 1s ease;
 }
 
 /* 
