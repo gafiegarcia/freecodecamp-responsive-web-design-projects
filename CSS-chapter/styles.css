@@ -73,11 +73,21 @@ body {
 
 a {
   color: inherit;
+  transition: 
+    outline var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+}
+
+a:hover {
+  cursor: pointer;
+  color: var(--accent-color)
 }
 
 a:focus {
-  outline-offset: 0.25rem;
-  outline: 2px solid orange;
+  outline-style: solid;
+  outline-color: var(--accent-color);
+}
+
 }
 
 section h2 {
