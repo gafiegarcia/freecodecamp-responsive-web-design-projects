@@ -151,7 +151,6 @@ section h2 {
 
 /* My GitHub profile link */
 .github-logo-link svg {
-  display: inline-block;
   width: 2.5rem;
   height: auto;
   object-fit: contain;
