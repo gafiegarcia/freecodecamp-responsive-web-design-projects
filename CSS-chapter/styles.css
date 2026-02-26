@@ -335,7 +335,7 @@ header .logo:is(:hover, :focus, :active) .animate-in {
 }
 
 .nav-link {
-  padding-inline: 1rem;
+  padding-inline: 0.5rem;
   height: 100%;
   text-decoration: none;
   line-height: var(--header-height);

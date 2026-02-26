@@ -7,8 +7,9 @@
 ## Personal Portfolio page
 - [ ] Time to start trying out theme toggle button implementation!
   - [ ] Find Toggle theme icons online and add proper hover animation
-- [ ] INTRO animation:
+- [ ] INTRO animation (aria-hidden="true"):
     - Welcome...
     - You weren't supposed to find this... <br> but,
 - [ ] Create README.md; assume the project is live on github pages when writing it
 - [ ] Remove .radio-btn component if it's not used
+- [ ] Add extra padding for .nav-link when min-width: ~400px
