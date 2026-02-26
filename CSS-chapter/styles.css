@@ -66,7 +66,6 @@ input, button, textarea, select {
 
 body {
   color: var(--text-color);
-  background-color: var(--bg-color); /* change if sections have different bgc */
   line-height: 1.6;
   background-color: var(--bg-color);
   font-family: 'Zalando Sans', sans-serif;
