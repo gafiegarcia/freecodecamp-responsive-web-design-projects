@@ -40,9 +40,9 @@ input, button, textarea, select {
 */
 
 :root {
-  --accent-color: hsl(353, 90%, 40%); /* Netflix-like red */
-  --text-color: hsl(60, 9%, 75%); 
-  --text-color-heading: hsl(60, 9%, 94%); /* Notion-like text color */
+  --accent-color: hsl(32, 90%, 40%);
+  --text-color: hsl(60, 9%, 70%); 
+  --text-color--heading: hsl(60, 9%, 94%); /* Notion-like text color */
   --text-color--muted: hsl(60, 1%, 40%); /* Notion text color */
   --bg-color: hsl(60, 10%, 10%);
   --bg-color--darker: hsl(60, 1%, 8%);
@@ -88,6 +88,12 @@ a:focus {
   outline-color: var(--accent-color);
 }
 
+h1, h2, h3 {
+  color: var(--text-color--heading);
+}
+
+h1 {
+  margin-bottom: 1rem;
 }
 
 section h2 {
@@ -351,9 +357,22 @@ header .logo:is(:hover, :focus, :active) .animate-in {
  * Main
 */
 
+/* Welcome section */
 #welcome-section {
   min-height: 100vh;
   min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.particles-bg-container {
+  top: 0.5rem;
+}
+
+h1 {
+  font-size: 3rem;
 }
 
 /* 
