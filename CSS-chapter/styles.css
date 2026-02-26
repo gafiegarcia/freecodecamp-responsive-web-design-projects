@@ -250,36 +250,6 @@ section h2 {
   border-color: var(--accent-color--darker);
 }
 
-/* My floating back-to-top button */
-/* <a class="back-to-top-btn" href="#" title="Back to top"><span class="sr-only">Back to top</span>&ShortUpArrow;</a> */
-.back-to-top-btn {
-  position: fixed;
-  right: 2rem;
-  bottom: 1.75rem;
-  z-index: 99;
-  display: flex;
-  width: 2rem;
-  height: 2rem;
-  padding: 0.125rem;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: 200;
-  color: var(--text-color--muted);
-  border: 1px solid;
-  border-radius: 50%;
-  opacity: 0.75;
-  backdrop-filter: brightness(95%) blur(4px);
-  transition: 
-    opacity var(--transition-speed) ease,
-    color var(--transition-speed) ease;
-}
-
-.back-to-top-btn:hover {
-  opacity: 1;
-  color: var(--accent-color);
-}
-
 /* ================================
    6. SECTIONS
    ================================ 
