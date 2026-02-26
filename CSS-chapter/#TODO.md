@@ -11,3 +11,4 @@
     - Welcome...
     - You weren't supposed to find this... <br> but,
 - [ ] Create README.md; assume the project is live on github pages when writing it
+- [ ] Remove .radio-btn component if it's not used
