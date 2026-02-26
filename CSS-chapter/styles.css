@@ -113,8 +113,42 @@ section h2 {
 .logo, .logo:hover {
   color: var(--text-color--heading);
 }
+
+/* Particles Background */
+.particles-bg-container {
+  z-index: -99;
+  position: absolute;
   overflow: hidden;
-  vertical-align: bottom;
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.particles-bg-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* background: radial-gradient(ellipse closest-side, transparent, var(--bg-color)); */
+}
+
+@keyframes particles-translate-x {
+  to {
+    transform: translate(7.4%);
+  }
+}
+
+.particles {
+  text-align: center;
+  color: var(--text-color--muted);
+  letter-spacing: 1rem;
+  opacity: 0.3;
+  font-family: var(--monospace);
+  animation: particles-translate-x 40s linear infinite;
 }
 
 /* My custom radio button 1 */
