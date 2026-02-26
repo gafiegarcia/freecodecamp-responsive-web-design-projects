@@ -40,8 +40,8 @@ input, button, textarea, select {
 */
 
 :root {
-  --accent-color: hsl(190, 70%, 35%);
-  --accent-color--darker: hsl(190, 60%, 25%);
+  --accent-color: hsl(190, 75%, 35%);
+  --accent-color--darker: hsl(190, 50%, 28%);
   --text-color: hsl(60, 9%, 70%); 
   --text-color--light: hsl(60, 9%, 94%); /* Notion-like text color */
   --text-color--muted: hsl(60, 1%, 40%); /* Notion text color */
@@ -83,7 +83,7 @@ a {
 
 a:hover {
   cursor: pointer;
-  color: var(--accent-color)
+  color: var(--accent-color);
 }
 
 a:focus {
