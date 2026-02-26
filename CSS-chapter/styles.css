@@ -45,10 +45,14 @@ input, button, textarea, select {
   --text-color-heading: hsl(60, 9%, 94%); /* Notion-like text color */
   --text-color--muted: hsl(60, 1%, 40%); /* Notion text color */
   --bg-color: hsl(60, 10%, 10%);
+  --bg-color--darker: hsl(60, 1%, 8%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 20%); /* redefine later */
   --monospace: 'Geist Mono', monospace; /* monospace font setting */
   --transition-speed: 0.3s;
+  --transition-speed--longer: 0.5s;
+  --intro-delay--header: 5s;
+  --header-height: 4rem;
   --container-max-width: 1200px;
   --container-padding: 1.5rem;
 }
@@ -100,16 +104,15 @@ section h2 {
 
 /* My name-logo */
 .logo {
-  display: inline-block;
   text-decoration: none;
-  font-size: 3rem;
   font-family: 'Zalando Sans SemiExpanded';
   font-weight: 600;
   line-height: 1;
 }
 
-.logo .animate-in-container {
-  display: inline-block;
+.logo, .logo:hover {
+  color: var(--text-color--heading);
+}
   overflow: hidden;
   vertical-align: bottom;
 }
@@ -154,13 +157,16 @@ section h2 {
   width: 2.5rem;
   height: auto;
   object-fit: contain;
-  filter: brightness(300%) saturate(0%);
+  vertical-align: middle;
+  display: inline;
+  filter: brightness(100%) saturate(0%);
   transition: filter var(--transition-speed) ease-out, transform var(--transition-speed) ease-out;
 }
 
 .github-logo-link:hover svg {
-  filter: brightness(100%) saturate(100%);
-  transform: scale(1.04);
+  filter: brightness(225%) saturate(100%);
+}
+
 }
 
 /* My floating back-to-top button */
@@ -206,10 +212,29 @@ section h2 {
 header {
   position: fixed;
   top: 0;
-  padding-inline: var(--container-padding);
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--bg-color--darker);
+  /* border-bottom: 1px solid var(--border-color); */
 }
 
 /* header logo and its animation (mobile, tablet, and desktop */
+header .logo {
+  position: absolute;
+  top: 50%;
+  left: var(--container-padding);
+  transform: translate(0, -50%);
+  display: inline-block;
+  font-size: calc(var(--header-height) - 1.75rem);
+}
+
+header .logo .animate-in-container {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
 
 @keyframes logo-animate-out {
   from {
@@ -220,15 +245,63 @@ header {
   }
 }
 
-.logo .animate-in {
+header .logo .animate-in {
   display: inline-block;
-  animation: logo-animate-out 1.4s ease 5s 1 backwards;
   transform: translate(-100%);
-  transition: transform 0.7s ease;
+  animation: logo-animate-out 1s ease var(--intro-delay--header) 1 backwards;
+  transition: transform var(--transition-speed--longer) ease;
 }
 
-.logo:is(:hover, :focus, :active) .animate-in {
+header .logo:is(:hover, :focus, :active) .animate-in {
   transform: translate(0);
+}
+
+/* navbar */
+@keyframes navbar-animate-in {
+  from {
+    transform: translate(100%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+#navbar {
+  display: flex;
+  margin-inline-end: calc(var(--container-padding) / 2);
+  z-index: 9;
+  align-items: center;
+  font-size: 87.5%;
+  animation: navbar-animate-in 1s ease var(--intro-delay--header) 1 backwards;
+  transition: transform var(--transition-speed--longer) ease;
+}
+
+.logo:is(:hover, :focus, :active) + #navbar {
+  transform: translate(100%);
+}
+
+.nav-link {
+  padding-inline: 1rem;
+  height: 100%;
+  text-decoration: none;
+  line-height: var(--header-height);
+  transition: 
+    box-shadow var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+  outline-offset: -1px;
+}
+
+.nav-link:hover {
+  box-shadow: inset 0 -1em 1.5em -1.75em;
+  color: var(--text-color--heading);
+}
+
+#profile-link svg {
+  width: 1.5rem;
+}
+
+#profile-link:hover svg {
+  transform: scale(1.1);
 }
 
 /* 
