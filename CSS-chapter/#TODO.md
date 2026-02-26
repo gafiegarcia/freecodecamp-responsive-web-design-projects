@@ -10,3 +10,4 @@
 - [ ] INTRO animation:
     - Welcome...
     - You weren't supposed to find this... <br> but,
+- [ ] Create README.md; assume the project is live on github pages when writing it
