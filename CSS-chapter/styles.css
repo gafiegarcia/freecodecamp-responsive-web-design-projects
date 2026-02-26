@@ -87,8 +87,8 @@ a:hover {
 }
 
 a:focus {
-  outline-style: solid;
-  outline-color: var(--accent-color);
+  outline: 2px solid var(--accent-color);
+  outline-offset: 1px;
 }
 
 h1, h2, h3 {
@@ -368,8 +368,10 @@ header .logo:is(:hover, :focus, :active) .animate-in {
   line-height: var(--header-height);
   transition: 
     box-shadow var(--transition-speed) ease,
-    color var(--transition-speed) ease;
-  outline-offset: -1px;
+}
+
+.nav-link:focus {
+  outline-offset: -2px;
 }
 
 .nav-link:hover {
