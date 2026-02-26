@@ -41,10 +41,12 @@ input, button, textarea, select {
 
 :root {
   --accent-color: hsl(353, 90%, 40%); /* Netflix-like red */
-  --text-color: hsl(60, 9%, 94%); /* Notion-like text color */
+  --text-color: hsl(60, 9%, 75%); 
+  --text-color-heading: hsl(60, 9%, 94%); /* Notion-like text color */
   --text-color--muted: hsl(60, 1%, 40%); /* Notion text color */
-  --bg-color: hsl(60, 1%, 10%);
-  --border-color: gray; /* redefine later */
+  --bg-color: hsl(60, 10%, 10%);
+  --shadow-color: hsla(60, 1%, 10%, 0.8);
+  --border-color: hsl(60, 1%, 20%); /* redefine later */
   --monospace: 'Geist Mono', monospace; /* monospace font setting */
   --transition-speed: 0.3s;
   --container-max-width: 1200px;
