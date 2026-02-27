@@ -118,6 +118,7 @@ section h3 {
 
 code {
   font-family: var(--monospace);
+  font-size: 87.5%;
 }
 
 /* ================================
