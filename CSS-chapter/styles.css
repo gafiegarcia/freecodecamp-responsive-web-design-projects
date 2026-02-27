@@ -43,12 +43,12 @@ input, button, textarea, select {
   --accent-color: hsl(195, 75%, 35%);
   --accent-color--darker: hsl(195, 50%, 28%);
   --text-color: hsl(60, 5%, 70%); 
-  --text-color--light: hsl(60, 10%, 94%); /* Notion-like text color */
+  --text-color--light: hsl(60, 10%, 90%); /* Notion-like text color */
   --text-color--muted: hsl(60, 5%, 40%); /* Notion text color */
-  --bg-color: hsl(60, 8%, 10%);
-  --bg-color--header: hsla(60, 8%, 10%, 0.9);
+  --bg-color: hsl(60, 5%, 10%);
+  --bg-color--header: hsla(60, 5%, 10%, 0.9);
   --bg-color--extra-dark: hsl(60, 3%, 0%);
-  --bg-color--lighter: hsl(60, 8%, 15%);
+  --bg-color--lighter: hsl(60, 5%, 15%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 35%); /* redefine later */
   --border-radius--m: 8px;
