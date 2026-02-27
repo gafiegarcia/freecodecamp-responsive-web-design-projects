@@ -42,8 +42,8 @@ input, button, textarea, select {
 :root {
   --accent-color: hsl(195, 75%, 35%);
   --accent-color--darker: hsl(195, 50%, 28%);
-  --text-color: hsl(60, 5%, 70%); 
-  --text-color--light: hsl(60, 10%, 90%); /* Notion-like text color */
+  --text-color: hsl(60, 5%, 75%); 
+  --text-color--light: hsl(60, 10%, 95%); /* Notion-like text color */
   --text-color--muted: hsl(60, 5%, 40%); /* Notion text color */
   --bg-color: hsl(60, 5%, 10%);
   --bg-color--header: hsla(60, 5%, 10%, 0.95);
