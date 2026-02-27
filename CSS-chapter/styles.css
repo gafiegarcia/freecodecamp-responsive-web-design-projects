@@ -426,7 +426,12 @@ h1 {
 }
 
 /* About section */
-#about-section {
+#about-section .container {
+  margin-block-start: 4rem;
+}
+
+/* Project section */
+#project-section .container {
   margin-block-start: 4rem;
 }
 
