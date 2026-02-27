@@ -47,10 +47,11 @@ input, button, textarea, select {
   --text-color--muted: hsl(60, 5%, 40%); /* Notion text color */
   --bg-color: hsl(60, 5%, 10%);
   --bg-color--header: hsla(60, 5%, 10%, 0.95);
-  --bg-color--extra-dark: hsl(60, 3%, 0%);
+  --bg-color--extra-dark: hsl(60, 3%, 8%);
   --bg-color--lighter: hsl(60, 2%, 15%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 35%); /* redefine later */
+  --border-radius--s: 4px;
   --border-radius--m: 8px;
   --monospace: 'Geist Mono', monospace; /* monospace font setting */
   --transition-speed: 0.3s;
@@ -110,9 +111,13 @@ section h2 {
 }
 
 section h3 {
-  margin-block: 1.5rem;
+  margin-block: 2.5rem 1rem;
   font-size: 1.375rem;
   font-weight: 500;
+}
+
+code {
+  font-family: var(--monospace);
 }
 
 /* ================================
@@ -442,7 +447,64 @@ h1 {
 
 /* Project section */
 #project-section .container {
-  margin-block-start: 4rem;
+  margin-block-start: 6rem;
+}
+
+.project-tiles {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  display: flex;
+  gap: 1.5rem;
+  padding-block: 0.5rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--border-color) var(--bg-color--lighter);
+}
+
+.project-tiles + .caption {
+  text-align: center;
+  font-style: italic;
+}
+
+.project-tile {
+  overflow: hidden;
+  border-radius: var(--border-radius--m);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex: 1 0 100%;
+  flex-direction: column;
+  text-decoration: none;
+  filter: brightness(0.85);
+  transition: filter var(--transition-speed) ease;
+  scroll-snap-align: center;
+  &:focus {
+    outline-offset: -1px;
+  }
+}
+
+.project-tile:hover {
+  color: inherit;
+  filter: brightness(1);
+}
+
+.project-tile > h4 {
+  background-color: var(--bg-color--lighter);
+  padding-block: 0.75rem;
+  text-align: center;
+  font-size: 1.125rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-ss {
+  width: 100%;
+  margin-inline: auto;  
+}
+
+.project-tile > p {
+  padding: 1rem 1.5rem;
+  font-size: 93.75%;
+  background-color: var(--bg-color--lighter);
+  border-top: 1px solid var(--border-color);
+  flex-grow: 1;
 }
 
 /* 
@@ -463,6 +525,10 @@ h1 {
   font-style: italic;
 }
 
+.caption {
+  color: var(--text-color--muted);
+}
+
 .monospace {
   font-family: var(--monospace);
 }
@@ -473,6 +539,13 @@ h1 {
   width: 1rem;
   vertical-align: text-top;
   margin-inline-end: 0.1875rem;
+}
+
+.inline-code {
+  border-radius: var(--border-radius--s);
+  border: 1px solid var(--border-color);
+  padding: 0.0625rem 0.25rem;
+  background-color: var(--bg-color--lighter);
 }
 
 .sr-only, .visually-hidden {
