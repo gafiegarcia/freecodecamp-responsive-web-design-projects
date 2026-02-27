@@ -387,7 +387,7 @@ header .logo:is(:hover, :focus, :active) .animate-in {
 }
 
 #profile-link:hover svg {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* 
