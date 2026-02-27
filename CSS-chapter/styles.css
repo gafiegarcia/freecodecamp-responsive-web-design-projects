@@ -299,6 +299,7 @@ header .logo {
   transform: translate(0, -50%);
   display: inline-block;
   font-size: calc(var(--header-height) / 2 - 0.25rem);
+  user-select: none;
 }
 
 header .logo .animate-in-container {
