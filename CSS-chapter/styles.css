@@ -48,7 +48,7 @@ input, button, textarea, select {
   --bg-color: hsl(60, 5%, 10%);
   --bg-color--header: hsla(60, 5%, 10%, 0.95);
   --bg-color--extra-dark: hsl(60, 3%, 0%);
-  --bg-color--lighter: hsl(60, 5%, 15%);
+  --bg-color--lighter: hsl(60, 2%, 15%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 35%); /* redefine later */
   --border-radius--m: 8px;
