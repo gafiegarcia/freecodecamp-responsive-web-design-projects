@@ -411,10 +411,6 @@ header .logo:is(:hover, :focus, :active) .animate-in {
   align-items: center;
 }
 
-.particles-bg-container {
-  top: 0.5rem;
-}
-
 h1 {
   font-size: 3rem;
 }
