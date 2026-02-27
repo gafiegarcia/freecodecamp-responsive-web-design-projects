@@ -298,7 +298,7 @@ header .logo {
   left: var(--container-padding);
   transform: translate(0, -50%);
   display: inline-block;
-  font-size: calc(var(--header-height) - 1.75rem);
+  font-size: calc(var(--header-height) / 2 - 0.25rem);
 }
 
 header .logo .animate-in-container {
