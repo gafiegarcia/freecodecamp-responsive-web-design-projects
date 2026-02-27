@@ -257,6 +257,23 @@ section h2 {
 */
 /* Page-specific styling */
 
+/* :target-text animation */
+@keyframes highlight-section {
+  0% {
+    background-color: transparent;
+  }
+  20% {
+    background-color: var(--accent-color--darker);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+section:target h2 {
+  animation: highlight-section 1.25s ease 0.25s 1;
+}
+
 /* 
  * Header
 */
