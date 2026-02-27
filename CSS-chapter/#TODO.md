@@ -6,6 +6,7 @@
 
 ## Personal Portfolio page
 - [ ] IMPORTANT: add .project-title class and have it replace .project-tile > h4 selector as the projects within All Projects might use h5 for the project title because of HTML and CSS sub-sub-section potentially (have to) use h4 to keep the semantic hierarchy clean.
+  - [ ] set color: --light
 - [ ] Unify margin-block-start for all section containers if I decide to use the same value for all of them
 - [ ] Time to start trying out theme toggle button implementation!
   - [ ] Find Toggle theme icons online and add proper hover animation
