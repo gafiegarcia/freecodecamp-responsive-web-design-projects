@@ -113,7 +113,7 @@ h2 {
 h3 {
   margin-block: 2.5rem 1rem;
   font-size: 1.375rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 code {
@@ -488,12 +488,14 @@ h1 {
   filter: brightness(1);
 }
 
-.project-tile > h4 {
+.project-title {
   background-color: var(--bg-color--lighter);
   padding-block: 0.75rem;
   text-align: center;
   font-size: 1.125rem;
   border-bottom: 1px solid var(--border-color);
+  color: var(--text-color--light);
+  font-weight: 600;
 }
 
 .project-ss {
