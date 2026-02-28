@@ -483,6 +483,7 @@ h1 {
   display: flex;
   flex: 1 0 100%;
   flex-direction: column;
+  max-width: 25rem;
   text-decoration: none;
   filter: brightness(0.85);
   transition: filter var(--transition-speed) ease;
