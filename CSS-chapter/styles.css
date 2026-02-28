@@ -453,11 +453,11 @@ h1 {
   margin-block-start: 6rem;
 }
 
-#project-section .fcc-chapter-heading {
+.fcc-chapter-heading {
   font-size: 1.25rem;
   font-weight: 500;
   font-family: var(--monospace);
-  margin-block-start: 1.5rem;
+  margin-block-start: 1.75rem;
 }
 
 .project-tiles {
