@@ -548,7 +548,7 @@ h1 {
 .inline-code {
   border-radius: var(--border-radius--s);
   border: 1px solid var(--border-color);
-  padding: 0.125rem 0.25rem;
+  padding: 0.125em 0.375em;
   background-color: var(--bg-color--lighter);
 }
 
