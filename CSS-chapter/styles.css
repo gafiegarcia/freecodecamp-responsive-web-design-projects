@@ -46,7 +46,7 @@ input, button, textarea, select {
   --text-color--light: hsl(60, 10%, 95%); /* Notion-like text color */
   --text-color--muted: hsl(60, 5%, 40%); /* Notion text color */
   --bg-color: hsl(60, 5%, 10%);
-  --bg-color--header: hsla(60, 5%, 10%, 0.95);
+  --bg-color--header: hsla(60, 5%, 10%, 0.9);
   --bg-color--extra-dark: hsl(60, 3%, 8%);
   --bg-color--lighter: hsl(60, 2%, 15%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
@@ -295,6 +295,7 @@ section:target h2 {
 
 header {
   position: fixed;
+  z-index: 9;
   top: 0;
   width: 100%;
   height: var(--header-height);
@@ -355,7 +356,6 @@ header .logo:is(:hover, :focus, :active) .animate-in {
 
 #navbar {
   display: flex;
-  z-index: 9;
   align-items: center;
   font-size: 87.5%;
   animation: navbar-animate-in 1s ease var(--intro-delay--header) 1 backwards;
