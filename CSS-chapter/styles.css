@@ -547,6 +547,14 @@ h1 {
   font-size: 93.75%;
 }
 
+.scroll-hint::before {
+  content: '← ';
+}
+
+.scroll-hint::after {
+  content: ' →';
+}
+
 /* 
  * Footer
 */
