@@ -288,7 +288,7 @@ code {
 }
 
 section:target h2 {
-  animation: highlight-section 1.25s ease 0.25s 1;
+  animation: highlight-section 1.25s ease 0.5s 1;
 }
 
 /* 
