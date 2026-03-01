@@ -5,8 +5,8 @@
 - [x] Add prefers-reduced-motion @media query and an appropriate section for it in CSS file structure
 
 ## Personal Portfolio page
-- [ ] Optimize image assets by converting them pngs to webp
-- [ ] Add text ::selection color
+- [x] Optimize image assets by converting them pngs to webp
+- [x] Add text ::selection color
 - [ ] Unify margin-block-start for all section containers if I decide to use the same value for all of them
 - [ ] Time to start trying out theme toggle button implementation!
   - [ ] Find Toggle theme icons online and add proper hover animation
