@@ -42,6 +42,7 @@ input, button, textarea, select {
 :root {
   --accent-color: hsl(195, 75%, 35%);
   --accent-color--darker: hsl(195, 50%, 28%);
+  --accent-color--lighter: hsl(195, 50%, 45%);
   --accent-color--green: hsl(100, 75%, 45%);
   --accent-color--red: hsl(355, 92%, 66%);
   --text-color: hsl(60, 5%, 75%); 
@@ -99,7 +100,7 @@ a {
 
 a:hover {
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--accent-color--lighter);
 }
 
 a:focus {
