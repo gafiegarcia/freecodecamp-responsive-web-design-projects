@@ -618,7 +618,7 @@ h1 {
   height: auto;
   width: 1rem;
   vertical-align: text-top;
-  margin-inline-end: 0.1875rem;
+  margin-inline: 0.1875rem;
 }
 
 .inline-code {
