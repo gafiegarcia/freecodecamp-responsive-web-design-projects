@@ -439,8 +439,30 @@ h1 {
 }
 
 /* About section */
-#introduction-section .container {
-  margin-block-start: 4rem;
+#introduction-section {
+  .container {
+    margin-block-start: 4rem;
+  }
+  p {
+    margin-block-start: 1rem;
+  }
+}
+
+.gaf-picture {
+  position: relative;
+  margin-block: 4rem 2rem;
+  overflow: hidden;
+  width: 300px;
+  margin-inline: auto;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: center radial-gradient(circle, transparent 57%, var(--bg-color) 60%);
+  }
 }
 
 /* Project section */
