@@ -362,12 +362,7 @@ header .logo:is(:hover, :focus, :active) .animate-in {
   font-size: 87.5%;
   animation: navbar-animate-in 1s ease var(--intro-delay--header) 1 backwards;
   transition: transform var(--transition-speed--longer) ease;
-}
-
-@media screen and (min-width: 375px) {
-  #navbar {
-    margin-inline-end: calc(var(--container-padding) / 2);
-  }
+  padding-inline-end: calc(var(--container-padding) / 2);
 }
 
 .logo:is(:hover, :focus, :active) + #navbar {
