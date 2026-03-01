@@ -81,6 +81,14 @@ body {
   font-family: 'Zalando Sans', sans-serif;
 }
 
+body::selection {
+  background-color: var(--accent-color--darker);
+}
+
+p::selection {
+  color: var(--text-color--light)
+}
+
 a {
   color: inherit;
   transition: 
@@ -566,6 +574,10 @@ h1 {
   code {
     font-weight: normal;
   }
+}
+
+.scroll-hint {
+  user-select: none;
 }
 
 .scroll-hint::before {
