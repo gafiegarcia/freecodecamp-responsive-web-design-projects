@@ -42,11 +42,13 @@ input, button, textarea, select {
 :root {
   --accent-color: hsl(195, 75%, 35%);
   --accent-color--darker: hsl(195, 50%, 28%);
+  --accent-color--green: hsl(100, 75%, 45%);
+  --accent-color--red: hsl(355, 92%, 66%);
   --text-color: hsl(60, 5%, 75%); 
   --text-color--light: hsl(60, 10%, 95%); /* Notion-like text color */
   --text-color--muted: hsl(60, 5%, 40%); /* Notion text color */
   --bg-color: hsl(60, 5%, 10%);
-  --bg-color--header: hsla(60, 5%, 10%, 0.95);
+  --bg-color--header: hsla(60, 5%, 10%, 0.9);
   --bg-color--extra-dark: hsl(60, 3%, 8%);
   --bg-color--lighter: hsl(60, 2%, 15%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
@@ -104,16 +106,16 @@ h1 {
   margin-bottom: 1rem;
 }
 
-section h2 {
+h2 {
   margin-bottom: 2rem;
   font-size: 2.25rem;
   text-align: center;
 }
 
-section h3 {
+h3 {
   margin-block: 2.5rem 1rem;
   font-size: 1.375rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 code {
@@ -286,7 +288,7 @@ code {
 }
 
 section:target h2 {
-  animation: highlight-section 1.25s ease 0.25s 1;
+  animation: highlight-section 1.25s ease 0.5s 1;
 }
 
 /* 
@@ -295,6 +297,7 @@ section:target h2 {
 
 header {
   position: fixed;
+  z-index: 9;
   top: 0;
   width: 100%;
   height: var(--header-height);
@@ -355,7 +358,6 @@ header .logo:is(:hover, :focus, :active) .animate-in {
 
 #navbar {
   display: flex;
-  z-index: 9;
   align-items: center;
   font-size: 87.5%;
   animation: navbar-animate-in 1s ease var(--intro-delay--header) 1 backwards;
@@ -451,13 +453,20 @@ h1 {
   margin-block-start: 6rem;
 }
 
+.fcc-chapter-heading {
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: var(--monospace);
+  margin-block-start: 1.75rem;
+}
+
 .project-tiles {
   overflow-x: auto;
   scroll-behavior: smooth;
   display: flex;
   gap: 1.5rem;
   padding-block: 0.5rem;
-  margin-block: 1rem;
+  margin-block: 0.5rem;
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--border-color) var(--bg-color--lighter);
 }
@@ -474,6 +483,7 @@ h1 {
   display: flex;
   flex: 1 0 100%;
   flex-direction: column;
+  max-width: 25rem;
   text-decoration: none;
   filter: brightness(0.85);
   transition: filter var(--transition-speed) ease;
@@ -488,12 +498,14 @@ h1 {
   filter: brightness(1);
 }
 
-.project-tile > h4 {
+.project-title {
   background-color: var(--bg-color--lighter);
-  padding-block: 0.75rem;
+  padding: 0.75rem;
   text-align: center;
   font-size: 1.125rem;
   border-bottom: 1px solid var(--border-color);
+  color: var(--text-color--light);
+  font-weight: 600;
 }
 
 .project-ss {
@@ -501,12 +513,50 @@ h1 {
   margin-inline: auto;  
 }
 
-.project-tile > p {
+.project-description {
   padding: 1rem 1.5rem;
-  font-size: 93.75%;
   background-color: var(--bg-color--lighter);
   border-top: 1px solid var(--border-color);
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-tag {
+  &.lab::before {
+    border-color: var(--accent-color--green);
+    color: var(--accent-color--green);
+    content: 'Lab';
+  }
+  &.certification::before {
+    border-color: var(--accent-color--red);
+    color: var(--accent-color--red);
+    content: 'Certification';
+  }
+  &::before {
+    border-radius: var(--border-radius--s);
+    border: 1px solid var(--border-color);
+    padding: 0.125em 0.375em;
+    background-color: var(--bg-color--lighter);
+    font-size: 87.5%;
+  }
+}
+
+.project-description p {
+  font-size: 93.75%;
+  font-weight: 300;
+  code {
+    font-weight: normal;
+  }
+}
+
+.scroll-hint::before {
+  content: '← ';
+}
+
+.scroll-hint::after {
+  content: ' →';
 }
 
 /* 
@@ -546,7 +596,7 @@ h1 {
 .inline-code {
   border-radius: var(--border-radius--s);
   border: 1px solid var(--border-color);
-  padding: 0.0625rem 0.25rem;
+  padding: 0.125em 0.375em;
   background-color: var(--bg-color--lighter);
 }
 
