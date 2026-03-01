@@ -545,6 +545,10 @@ h1 {
 
 .project-description p {
   font-size: 93.75%;
+  font-weight: 300;
+  code {
+    font-weight: normal;
+  }
 }
 
 .scroll-hint::before {
