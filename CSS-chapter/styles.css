@@ -62,6 +62,7 @@ input, button, textarea, select {
   --header-height: 4rem;
   --container-max-width: 1200px;
   --container-padding: 1.5rem;
+  --section-container-margin-top: 6rem;
 }
 
 /* theme-switching variables goes here */
@@ -143,8 +144,8 @@ code {
   padding-inline: var(--container-padding);
 }
 
-section > .container {
-  margin-top: 6rem;
+section:not(#welcome-section) > .container {
+  margin-top: var(--section-container-margin-top);
 }
 
 /* ================================
