@@ -59,7 +59,7 @@ input, button, textarea, select {
   --monospace: 'Geist Mono', monospace; /* monospace font setting */
   --transition-speed: 0.3s;
   --transition-speed--longer: 0.5s;
-  --intro-delay--header: 5s;
+  --intro-delay--header: 3s;
   --header-height: 4rem;
   --container-max-width: 1200px;
   --container-padding: 1.5rem;
