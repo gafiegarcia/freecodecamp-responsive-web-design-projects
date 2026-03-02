@@ -228,7 +228,7 @@ section:not(#welcome-section) > .container {
 }
 
 .btn-link:focus {
-  outline-offset: -1px;
+  outline-offset: -2px;
 }
 
 .btn-link:not(.accent):is(:hover, :focus) {
