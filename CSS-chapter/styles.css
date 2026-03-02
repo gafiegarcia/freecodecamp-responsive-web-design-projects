@@ -54,6 +54,7 @@ input, button, textarea, select {
   --bg-color--lighter: hsl(60, 2%, 15%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 35%); /* redefine later */
+  --border-color--muted: hsl(60, 1%, 25%); /* redefine later */
   --border-radius--s: 4px;
   --border-radius--m: 8px;
   --monospace: 'Geist Mono', monospace; /* monospace font setting */
@@ -132,6 +133,11 @@ h3 {
 code {
   font-family: var(--monospace);
   font-size: 87.5%;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid var(--border-color--muted);
 }
 
 /* ================================
@@ -573,6 +579,12 @@ footer .btn-div {
   margin-inline: auto;
   justify-content: center;
   margin-top: 2rem;
+}
+
+footer hr {
+  width: 50%;
+  margin-inline: auto;
+  margin-top: var(--section-container-margin-top);
 }
 
 /* ================================
