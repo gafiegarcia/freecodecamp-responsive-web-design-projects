@@ -77,6 +77,7 @@ html {
   scroll-padding-top: calc(var(--header-height) + 2rem);
   /* dynamic font size 14px -> 16px from 320px to 768px viewport width */
   font-size: clamp(0.875rem, 0.7857rem + 0.4464vw, 1rem);
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -470,9 +471,20 @@ h1 {
   display: flex;
   gap: 1.5rem;
   padding-block: 0.5rem;
+  padding-inline: var(--container-padding);
   margin-block: 0.5rem;
+  margin-inline-start: calc(var(--container-padding) * -1);
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--border-color) var(--bg-color--lighter);
+  width: 100vw;
+}
+
+@media screen and (min-width: 768px) {
+  .project-tiles {
+    padding-inline: 0;
+    margin-inline-start: 0;
+    width: auto;
+  }  
 }
 
 .project-tiles + .caption {
