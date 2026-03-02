@@ -150,6 +150,12 @@ section:not(#welcome-section) > .container {
   margin-top: var(--section-container-margin-top);
 }
 
+.btn-div {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
 /* ================================
    5. COMPONENTS
    ================================ 
@@ -404,10 +410,8 @@ h1 {
   font-size: 112.5%;
 }
 
-.btn-div {
-  display: flex;
+#welcome-section .btn-div {
   margin-top: 6rem;
-  gap: 2rem;
 }
 
 /* About section */
