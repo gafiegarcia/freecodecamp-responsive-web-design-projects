@@ -593,6 +593,11 @@ h1 {
  * Footer
 */
 
+footer {
+  margin-top: var(--section-container-margin-top);
+  padding-bottom: var(--section-container-margin-top);
+}
+
 
 /* ================================
    7. UTILITIES
