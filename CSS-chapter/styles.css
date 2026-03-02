@@ -209,19 +209,30 @@ section:not(#welcome-section) > .container {
   animation: particles-translate-x 40s linear infinite;
 }
 
-/* My GitHub profile link */
-.github-logo-link svg {
-  width: 2.5rem;
+/* Contact logo link */
+.contact-logo-link.circular-border {
+  padding: 1rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  aspect-ratio: 1 / 1;
+  display: flex;
+}
+
+.contact-logo-link :is(img, svg) {
+  width: 2rem;
   height: auto;
   object-fit: contain;
   vertical-align: middle;
   display: inline;
-  filter: brightness(100%) saturate(0%);
-  transition: filter var(--transition-speed) ease-out, transform var(--transition-speed) ease-out;
+  filter: brightness(80%) saturate(0%);
+  transition: 
+    filter var(--transition-speed) ease-out, 
+    transform var(--transition-speed) ease-out
+  ;
 }
 
-.github-logo-link:hover svg {
-  filter: brightness(225%) saturate(100%);
+.contact-logo-link:hover :is(img, svg) {
+  filter: brightness(100%) saturate(100%);
 }
 
 /* Button-like link */
@@ -558,6 +569,11 @@ footer {
   padding-bottom: var(--section-container-margin-top);
 }
 
+footer .btn-div {
+  margin-inline: auto;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
 /* ================================
    7. UTILITIES
