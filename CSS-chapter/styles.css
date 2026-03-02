@@ -462,9 +462,9 @@ h1 {
 
 .gaf-picture {
   position: relative;
-  margin-block: 3rem 1.5rem;
+  margin-block: 4rem 1.5rem;
   overflow: hidden;
-  max-width: min(300px, 90%);
+  max-width: min(15rem, 70%);
   margin-inline: auto;
   &::after {
     content: "";
