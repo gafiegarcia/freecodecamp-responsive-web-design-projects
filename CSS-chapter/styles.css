@@ -63,6 +63,7 @@ input, button, textarea, select {
   --intro-delay--header: 3s;
   --header-height: 4rem;
   --container-max-width: 1200px;
+  --header-padding: 1rem;
   --container-padding: 1.5rem;
   --section-container-margin-top: 6rem;
 }
@@ -318,7 +319,7 @@ header {
 header .logo {
   position: absolute;
   top: 50%;
-  left: var(--container-padding);
+  left: var(--header-padding);
   transform: translate(0, -50%);
   display: inline-block;
   font-size: calc(var(--header-height) / 2 - 0.25rem);
@@ -369,7 +370,7 @@ header .logo:is(:hover, :focus, :active) .animate-in {
   font-size: 87.5%;
   animation: navbar-animate-in 1s ease var(--intro-delay--header) 1 backwards;
   transition: transform var(--transition-speed--longer) ease;
-  padding-inline-end: calc(var(--container-padding) / 2);
+  padding-inline-end: calc(var(--header-padding) / 2);
 }
 
 .logo:is(:hover, :focus, :active) + #navbar {
