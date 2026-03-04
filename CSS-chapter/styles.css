@@ -454,15 +454,7 @@ h1 {
   overflow: hidden;
   max-width: min(15rem, 70%);
   margin-inline: auto;
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: center / 110% 110% radial-gradient(circle, transparent 57%, var(--bg-color) 60%);
-  }
+  mask-image: radial-gradient(circle, black 58%, transparent 61%);
 }
 
 /* Project section */
