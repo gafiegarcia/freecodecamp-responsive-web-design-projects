@@ -5,14 +5,14 @@
 - [x] Add prefers-reduced-motion @media query and an appropriate section for it in CSS file structure
 
 ## Personal Portfolio page
-- [ ] Move ::selection rule to BASE as it is a base styling, not section-specific
-- [ ] Unify margin-block-start for all section containers if I decide to use the same value for all of them
 - [ ] Time to start trying out theme toggle button implementation!
   - [ ] Find Toggle theme icons online and add proper hover animation
 - [ ] INTRO animation (aria-hidden="true"):
     - Welcome...
     - You weren't supposed to find this... <br> but,
 - [ ] Create README.md; assume the project is live on github pages when writing it
+- [x] Move ::selection rule to BASE as it is a base styling, not section-specific
+- [x] Unify margin-block-start for all section containers if I decide to use the same value for all of them
 - [x] Remove .radio-btn component if it's not used
 - [x] Optimize image assets by converting them pngs to webp
 - [x] Add text ::selection color
