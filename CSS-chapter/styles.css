@@ -560,8 +560,9 @@ h1 {
 }
 
 .project-description p {
-  font-size: 93.75%;
+  font-size: max(13px, 87.5%);
   font-weight: 300;
+  margin-block-start: 0;
   code {
     font-weight: normal;
   }
