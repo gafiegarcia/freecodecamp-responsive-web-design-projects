@@ -134,13 +134,12 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 2rem;
   font-size: 2.25rem;
   text-align: center;
 }
 
 h3 {
-  margin-block: 3rem 1rem;
+  margin-block-start: 3rem;
   font-size: 1.375rem;
   font-weight: 600;
 }
@@ -471,7 +470,7 @@ h1 {
   gap: 2rem;
   padding-block: 0.5rem;
   padding-inline: var(--container-padding);
-  margin-block: 0.5rem;
+  margin-block-start: 1rem;
   margin-inline-start: calc(var(--container-padding) * -1);
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--border-color) var(--bg-color--lighter);
@@ -569,6 +568,7 @@ h1 {
 
 .scroll-hint {
   user-select: none;
+  margin-block-start: 0.5rem;
 }
 
 .scroll-hint::before {
