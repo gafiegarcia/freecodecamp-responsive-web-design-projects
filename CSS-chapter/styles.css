@@ -384,7 +384,7 @@ header .logo:is(:hover, :focus, :active) .animate-in {
   line-height: var(--header-height);
 }
 
-@media screen and (max-width: 25rem) {
+@media screen and (max-width: 21rem) {
   .nav-link[href="#introduction-section"] {
     display: none;
   } 
