@@ -120,6 +120,10 @@ a:focus {
   outline-offset: 1px;
 }
 
+p {
+  max-width: 70ch;
+}
+
 h1, h2, h3 {
   color: var(--text-color--light);
 }
