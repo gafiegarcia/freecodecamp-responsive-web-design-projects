@@ -587,6 +587,14 @@ h1 {
 footer {
   margin-top: var(--section-container-margin-top);
   padding-bottom: var(--section-container-margin-top);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  scroll-margin-top: calc((var(--header-height) + 2rem) * -1);
+}
+
+footer .container {
+  align-self: center;
 }
 
 footer .btn-div {
