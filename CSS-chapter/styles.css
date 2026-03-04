@@ -470,7 +470,7 @@ h1 {
   overflow-x: auto;
   scroll-behavior: smooth;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   padding-block: 0.5rem;
   padding-inline: var(--container-padding);
   margin-block: 0.5rem;
