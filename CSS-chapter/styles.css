@@ -41,7 +41,8 @@ input, button, textarea, select {
 
 :root {
   --accent-color: hsl(195, 75%, 35%);
-  --accent-color--darker: hsl(195, 50%, 28%);
+  --accent-color--darker: hsl(195, 75%, 28%);
+  --accent-color--lighter: hsl(195, 75%, 50%);
   --accent-color--green: hsl(100, 75%, 45%);
   --accent-color--red: hsl(355, 92%, 66%);
   --text-color: hsl(60, 5%, 75%); 
@@ -53,15 +54,18 @@ input, button, textarea, select {
   --bg-color--lighter: hsl(60, 2%, 15%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 35%); /* redefine later */
+  --border-color--muted: hsl(60, 1%, 25%); /* redefine later */
   --border-radius--s: 4px;
   --border-radius--m: 8px;
   --monospace: 'Geist Mono', monospace; /* monospace font setting */
   --transition-speed: 0.3s;
   --transition-speed--longer: 0.5s;
-  --intro-delay--header: 5s;
+  --intro-delay--header: 3s;
   --header-height: 4rem;
   --container-max-width: 1200px;
+  --header-padding: 1rem;
   --container-padding: 1.5rem;
+  --section-container-margin-top: 6rem;
 }
 
 /* theme-switching variables goes here */
@@ -72,6 +76,9 @@ input, button, textarea, select {
 */
 html {
   scroll-padding-top: calc(var(--header-height) + 2rem);
+  /* dynamic font size 14px -> 16px from 320px to 768px viewport width */
+  font-size: clamp(0.875rem, 0.7857rem + 0.4464vw, 1rem);
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -98,7 +105,7 @@ a {
 
 a:hover {
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--accent-color--lighter);
 }
 
 a:focus {
@@ -121,7 +128,7 @@ h2 {
 }
 
 h3 {
-  margin-block: 2.5rem 1rem;
+  margin-block: 3rem 1rem;
   font-size: 1.375rem;
   font-weight: 600;
 }
@@ -129,6 +136,11 @@ h3 {
 code {
   font-family: var(--monospace);
   font-size: 87.5%;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid var(--border-color--muted);
 }
 
 /* ================================
@@ -141,6 +153,16 @@ code {
   width: 100%;
   margin-inline: auto;
   padding-inline: var(--container-padding);
+}
+
+section:not(#welcome-section) > .container {
+  margin-top: var(--section-container-margin-top);
+}
+
+.btn-div {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 /* ================================
@@ -196,54 +218,30 @@ code {
   animation: particles-translate-x 40s linear infinite;
 }
 
-/* My custom radio button 1 */
-.radio-btn {
-  appearance: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  vertical-align: middle;
-  position: relative;
-  bottom: 2px;
+/* Contact logo link */
+.contact-logo-link.circular-border {
+  padding: 1rem;
+  border-radius: 50%;
   border: 1px solid var(--border-color);
-  margin-inline-end: 0.25rem;
-  border-radius: 50%;
-  transition: border-color var(--transition-speed) ease;
+  aspect-ratio: 1 / 1;
+  display: flex;
 }
 
-.radio-btn::after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: var(--border-color);
-  border-radius: 50%;
-  opacity: 0;
-  transition: 
-    opacity var(--transition-speed) ease, 
-    background-color var(--transition-speed) ease;
-}
-
-.radio-btn:checked::after {
-  opacity: 1;
-}
-
-/* My GitHub profile link */
-.github-logo-link svg {
-  width: 2.5rem;
+.contact-logo-link :is(img, svg) {
+  width: 2rem;
   height: auto;
   object-fit: contain;
   vertical-align: middle;
   display: inline;
-  filter: brightness(100%) saturate(0%);
-  transition: filter var(--transition-speed) ease-out, transform var(--transition-speed) ease-out;
+  filter: brightness(80%) saturate(0%);
+  transition: 
+    filter var(--transition-speed) ease-out, 
+    transform var(--transition-speed) ease-out
+  ;
 }
 
-.github-logo-link:hover svg {
-  filter: brightness(225%) saturate(100%);
+.contact-logo-link:hover :is(img, svg) {
+  filter: brightness(100%) saturate(100%);
 }
 
 /* Button-like link */
@@ -256,7 +254,7 @@ code {
 }
 
 .btn-link:focus {
-  outline-offset: -1px;
+  outline-offset: -2px;
 }
 
 .btn-link:not(.accent):is(:hover, :focus) {
@@ -321,7 +319,7 @@ header {
 header .logo {
   position: absolute;
   top: 50%;
-  left: var(--container-padding);
+  left: var(--header-padding);
   transform: translate(0, -50%);
   display: inline-block;
   font-size: calc(var(--header-height) / 2 - 0.25rem);
@@ -366,12 +364,13 @@ header .logo:is(:hover, :focus, :active) .animate-in {
 }
 
 #navbar {
+  z-index: 1;
   display: flex;
   align-items: center;
   font-size: 87.5%;
   animation: navbar-animate-in 1s ease var(--intro-delay--header) 1 backwards;
   transition: transform var(--transition-speed--longer) ease;
-  padding-inline-end: calc(var(--container-padding) / 2);
+  padding-inline-end: calc(var(--header-padding) / 2);
 }
 
 .logo:is(:hover, :focus, :active) + #navbar {
@@ -383,10 +382,6 @@ header .logo:is(:hover, :focus, :active) .animate-in {
   height: 100%;
   text-decoration: none;
   line-height: var(--header-height);
-  transition: 
-    box-shadow var(--transition-speed) ease,
-    color var(--transition-speed) ease
-  ;
 }
 
 @media screen and (max-width: 25rem) {
@@ -397,11 +392,6 @@ header .logo:is(:hover, :focus, :active) .animate-in {
 
 .nav-link:focus {
   outline-offset: -2px;
-}
-
-.nav-link:hover {
-  box-shadow: inset 0 -1em 1.5em -1.75em;
-  color: var(--text-color--light);
 }
 
 #profile-link svg {
@@ -440,27 +430,22 @@ h1 {
   font-size: 112.5%;
 }
 
-.btn-div {
-  display: flex;
+#welcome-section .btn-div {
   margin-top: 6rem;
-  gap: 2rem;
 }
 
 /* About section */
 #introduction-section {
-  .container {
-    margin-block-start: 4rem;
-  }
-  p {
-    margin-block-start: 1rem;
+    p {
+    margin-block-start: 1.5rem;
   }
 }
 
 .gaf-picture {
   position: relative;
-  margin-block: 4rem 2rem;
+  margin-block: 4rem 1.5rem;
   overflow: hidden;
-  width: 300px;
+  max-width: min(15rem, 70%);
   margin-inline: auto;
   &::after {
     content: "";
@@ -469,15 +454,11 @@ h1 {
     top: 0;
     width: 100%;
     height: 100%;
-    background: center radial-gradient(circle, transparent 57%, var(--bg-color) 60%);
+    background: center / 110% 110% radial-gradient(circle, transparent 57%, var(--bg-color) 60%);
   }
 }
 
 /* Project section */
-#project-section .container {
-  margin-block-start: 6rem;
-}
-
 .fcc-chapter-heading {
   font-size: 1.25rem;
   font-weight: 500;
@@ -491,9 +472,20 @@ h1 {
   display: flex;
   gap: 1.5rem;
   padding-block: 0.5rem;
+  padding-inline: var(--container-padding);
   margin-block: 0.5rem;
+  margin-inline-start: calc(var(--container-padding) * -1);
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--border-color) var(--bg-color--lighter);
+  width: 100vw;
+}
+
+@media screen and (min-width: 768px) {
+  .project-tiles {
+    padding-inline: 0;
+    margin-inline-start: 0;
+    width: auto;
+  }  
 }
 
 .project-tiles + .caption {
@@ -592,6 +584,30 @@ h1 {
  * Footer
 */
 
+footer {
+  margin-top: var(--section-container-margin-top);
+  padding-bottom: var(--section-container-margin-top);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  scroll-margin-top: calc((var(--header-height) + 2rem) * -1);
+}
+
+footer .container {
+  align-self: center;
+}
+
+footer .btn-div {
+  margin-inline: auto;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+footer hr {
+  width: 50%;
+  margin-inline: auto;
+  margin-top: var(--section-container-margin-top);
+}
 
 /* ================================
    7. UTILITIES
@@ -619,7 +635,7 @@ h1 {
   height: auto;
   width: 1rem;
   vertical-align: text-top;
-  margin-inline-end: 0.1875rem;
+  margin-inline: 0.1875rem;
 }
 
 .inline-code {
@@ -627,6 +643,18 @@ h1 {
   border: 1px solid var(--border-color);
   padding: 0.125em 0.375em;
   background-color: var(--bg-color--lighter);
+}
+
+.hover-inset-shadow {
+  transition: 
+    box-shadow var(--transition-speed) ease,
+    color var(--transition-speed) ease /* for .nav-link */
+  ;
+}
+
+.hover-inset-shadow:hover {
+  box-shadow: inset 0 -1em 1.5em -1.75em;
+  color: var(--text-color--light);
 }
 
 .sr-only, .visually-hidden {
