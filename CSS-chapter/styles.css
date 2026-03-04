@@ -586,7 +586,7 @@ h1 {
 
 footer {
   margin-top: var(--section-container-margin-top);
-  padding-bottom: var(--section-container-margin-top);
+  padding-block: calc(var(--section-container-margin-top) / 2);
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
