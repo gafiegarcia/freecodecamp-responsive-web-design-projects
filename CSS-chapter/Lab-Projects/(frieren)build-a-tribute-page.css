@@ -92,7 +92,7 @@ a:hover {
 /* FIRST SECTION */
 
 #main {
-  background: linear-gradient(to right, #1118, #000a 70%), url("https://i.ibb.co.com/5gM9yCWQ/Gemini-Generated-Image-kvzd2vkvzd2vkvzd.png") left bottom no-repeat;
+  background: linear-gradient(to right, #1118, #000a 70%), url("../assets/Gemini_Generated_Image_kvzd2vkvzd2vkvzd.webp") left bottom no-repeat;
   background-size: cover;
   color: #fff;
   text-shadow: 2px 2px 7px hsla(230, 0%, 0%, 0.5);
@@ -314,7 +314,7 @@ a:hover {
 /* FOOTER */
 
 footer {
-  background: linear-gradient(to right, #1118, #000a 70%), url("https://i.ibb.co.com/5gM9yCWQ/Gemini-Generated-Image-kvzd2vkvzd2vkvzd.png") left bottom / 200% no-repeat;
+  background: linear-gradient(to right, #1118, #000a 70%), url("../assets/Gemini_Generated_Image_kvzd2vkvzd2vkvzd.webp") left bottom / 200% no-repeat;
   color: #fafafa;
   justify-content: space-evenly;
   align-items: center;
