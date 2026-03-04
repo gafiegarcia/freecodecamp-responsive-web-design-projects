@@ -1,16 +1,26 @@
 # TODOs
 
 ## styles-template.css
+
+### Done
 - [x] Finish creating styles-template.css
 - [x] Add prefers-reduced-motion @media query and an appropriate section for it in CSS file structure
 
 ## Personal Portfolio page
+
+### v1.0--progressive-enhancement-draft
+- [ ] optimize up to 1024px
+- [ ] (optional) create new layout >1024px to make use of the full viewport width
+- [ ] Create README.md; assume the project is live on github pages when writing it
+
+### (planned) v1.1 with nice to have features(animation and theme toggle)
 - [ ] Time to start trying out theme toggle button implementation!
   - [ ] Find Toggle theme icons online and add proper hover animation
 - [ ] INTRO animation (aria-hidden="true"):
     - Welcome...
     - You weren't supposed to find this... <br> but,
-- [ ] Create README.md; assume the project is live on github pages when writing it
+
+### Done
 - [x] Move ::selection rule to BASE as it is a base styling, not section-specific
 - [x] Unify margin-block-start for all section containers if I decide to use the same value for all of them
 - [x] Remove .radio-btn component if it's not used
