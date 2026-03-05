@@ -97,10 +97,7 @@ body {
 
 body::selection {
   background-color: var(--accent-color--darker);
-}
-
-p::selection {
-  color: var(--text-color--light)
+  color: var(--text-color--light);
 }
 
 a {
