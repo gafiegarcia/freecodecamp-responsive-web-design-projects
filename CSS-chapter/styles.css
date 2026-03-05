@@ -467,7 +467,7 @@ h1 {
   overflow-x: auto;
   scroll-behavior: smooth;
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   padding-block: 0.5rem;
   padding-inline: var(--container-padding);
   margin-block-start: 1rem;
@@ -497,7 +497,7 @@ h1 {
   display: flex;
   flex: 1 0 100%;
   flex-direction: column;
-  max-width: 25rem;
+  max-width: 23rem;
   text-decoration: none;
   filter: brightness(0.85);
   transition: filter var(--transition-speed) ease;
