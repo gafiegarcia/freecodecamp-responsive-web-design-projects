@@ -483,21 +483,12 @@ h1 {
   scroll-behavior: smooth;
   display: flex;
   gap: 3rem;
-  padding-block: 0.5rem;
+  padding-block: 1rem;
   padding-inline: var(--container-padding);
-  margin-block-start: 1rem;
   margin-inline-start: calc(var(--container-padding) * -1);
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--border-color) var(--bg-color--lighter);
   width: 100vw;
-}
-
-@media (min-width: 767px) {
-  .project-tiles {
-    padding-inline: 0;
-    margin-inline-start: 0;
-    width: auto;
-  }  
 }
 
 .project-tiles + .caption {
