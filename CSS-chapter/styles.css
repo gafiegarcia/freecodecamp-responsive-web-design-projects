@@ -415,7 +415,7 @@ header .logo:is(:hover, :focus, :active) .animate-in {
   line-height: var(--header-height);
 }
 
-@media (max-width: 21rem) {
+@media (max-width: 21.75rem) {
   .nav-link[href="#introduction-section"] {
     display: none;
   } 
