@@ -340,7 +340,7 @@ header {
   background-color: var(--bg-color--header);
   /* border-bottom: 1px solid var(--border-color); */
   box-shadow: 0 0 2rem var(--bg-color);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
 }
 
 /* header logo and its animation (mobile, tablet, and desktop */
