@@ -642,6 +642,13 @@ h1 {
   content: ' →';
 }
 
+@media (min-width: 79rem) {
+  /* if project-tiles gap, project-tile max-width, or container-padding changes value the breakpoint (79rem) has to be updated */
+  #favorite-projects .scroll-hint {
+    visibility: hidden;
+  }
+}
+
 /* 
  * Footer
 */
