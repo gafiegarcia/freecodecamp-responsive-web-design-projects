@@ -145,6 +145,7 @@ h1 {
 h2 {
   font-size: 2.25rem;
   text-align: center;
+  padding-inline: 0.25em;
 }
 
 h3 {
@@ -333,6 +334,7 @@ section:not(#welcome-section) > .container {
 
 section:target h2 {
   animation: highlight-section 1.25s ease 0.7s 1;
+  border-radius: var(--border-radius--m);
 }
 
 /* 
