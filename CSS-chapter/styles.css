@@ -62,11 +62,12 @@ input, button, textarea, select {
   --transition-speed--longer: 0.5s;
   --intro-delay--header: 3s;
   --header-height: 4rem;
-  --container-max-width: 1200px;
+  --container-max-width: 100rem;
   --header-padding: 1rem;
   --container-padding: 1.5rem;
   --section-container-margin-top: 6rem;
   --section-headings-margin-block-start: 3rem;
+  --text-max-width: 40rem;
 }
 
 @media (min-width: 540px) {
@@ -126,7 +127,7 @@ a:focus {
 }
 
 p {
-  max-width: 70ch;
+  max-width: var(--text-max-width);
   margin-block-start: 1rem;
   + p {
     margin-block-start: 1.5rem;
@@ -150,6 +151,7 @@ h3 {
   margin-block-start: var(--section-headings-margin-block-start);
   font-size: 1.375rem;
   font-weight: 600;
+  max-width: var(--text-max-width);
 }
 
 code {
