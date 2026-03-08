@@ -464,7 +464,7 @@ h1 {
 
 /* About section */
 .gaf-picture {
-  position: relative;
+  display: block;
   margin-top: 4rem;
   overflow: hidden;
   max-width: min(15rem, 70%);
