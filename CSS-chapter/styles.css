@@ -48,9 +48,9 @@ input, button, textarea, select {
   --text-color: hsl(60, 5%, 75%); 
   --text-color--light: hsl(60, 10%, 95%); /* Notion-like text color */
   --text-color--muted: hsl(60, 5%, 40%); /* Notion text color */
-  --bg-color: hsl(60, 5%, 10%);
-  --bg-color--header: hsla(60, 5%, 10%, 0.9);
-  --bg-color--extra-dark: hsl(60, 3%, 8%);
+  --bg-color: hsl(45, 5%, 10%);
+  --bg-color--header: hsla(45, 5%, 10%, 0.93);
+  --bg-color--extra-dark: hsl(42, 3%, 8%);
   --bg-color--lighter: hsl(60, 2%, 15%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 35%); /* redefine later */
