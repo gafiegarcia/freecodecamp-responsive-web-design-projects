@@ -599,23 +599,33 @@ footer {
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
+  align-items: center;
   scroll-margin-top: calc((var(--header-height) + 2rem) * -1);
 }
 
 footer .container {
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+footer .container :first-child {
+  margin-top: 0;
+}
+
+footer p:has(.caption) {
+  margin-block-start: 1rem;
 }
 
 footer .btn-div {
   margin-inline: auto;
   justify-content: center;
-  margin-top: 2rem;
 }
 
 footer hr {
-  width: 50%;
+  width: 60%;
   margin-inline: auto;
-  margin-top: var(--section-container-margin-top);
+  margin-top: 2rem;
 }
 
 /* ================================
