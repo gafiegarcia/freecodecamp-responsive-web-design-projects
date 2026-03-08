@@ -62,7 +62,7 @@ input, button, textarea, select {
   --transition-speed--longer: 0.5s;
   --intro-delay--header: 3s;
   --header-height: 4rem;
-  --container-max-width: 100rem;
+  --container-max-width: none;
   --header-padding: 1rem;
   --container-padding: 1.5rem;
   --section-container-margin-top: 6rem;
