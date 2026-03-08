@@ -474,7 +474,7 @@ h1 {
 /* About section */
 .gaf-picture {
   display: block;
-  margin-top: 4rem;
+  margin-block-start: 4rem;
   overflow: hidden;
   max-width: min(15rem, 70%);
   margin-inline: auto;
@@ -619,7 +619,7 @@ footer .container {
 }
 
 footer .container :first-child {
-  margin-top: 0;
+  margin-block-start: 0;
 }
 
 footer p:has(.caption) {
@@ -634,7 +634,7 @@ footer .btn-div {
 footer hr {
   width: 60%;
   margin-inline: auto;
-  margin-top: 2rem;
+  margin-block-start: 2rem;
 }
 
 /* ================================
