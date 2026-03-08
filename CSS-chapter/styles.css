@@ -89,6 +89,12 @@ input, button, textarea, select {
   }
 }
 
+@media (min-width: 1440px) {
+  :root {
+    --container-padding: clamp(2rem, -10rem + 13.3333vw, 6rem);
+  }
+}
+
 /* theme-switching variables goes here */
 
 /* ================================
@@ -98,8 +104,14 @@ input, button, textarea, select {
 html {
   scroll-padding-top: calc(var(--header-height) + 2rem);
   /* dynamic font size 14px -> 16px from 320px to 767px viewport width */
-  font-size: clamp(0.875rem, 0.7855rem + 0.4474vw, 1rem);
+  font-size: clamp(87.5%, 78.55% + 0.4474vw, 100%);
   scrollbar-gutter: stable;
+}
+
+@media (min-width: 1921px) {
+  html {
+    font-size: clamp(100%, 25% + 0.625vw, 125%);
+  }
 }
 
 body {
