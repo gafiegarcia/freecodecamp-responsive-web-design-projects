@@ -665,6 +665,11 @@ h1 {
   }
 }
 
+/* last remark about this page */
+#project-section > .container > p:last-child {
+  margin-top: 6rem;
+}
+
 /* 
  * Footer
 */
