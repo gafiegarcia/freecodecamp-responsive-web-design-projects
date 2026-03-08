@@ -49,7 +49,7 @@ input, button, textarea, select {
   --text-color--light: hsl(60, 10%, 95%); /* Notion-like text color */
   --text-color--muted: hsl(60, 5%, 40%); /* Notion text color */
   --bg-color: hsl(45, 5%, 10%);
-  --bg-color--header: hsla(45, 5%, 10%, 0.93);
+  --bg-color--header: hsla(45, 5%, 10%, 0.95);
   --bg-color--extra-dark: hsl(42, 3%, 8%);
   --bg-color--lighter: hsl(60, 2%, 15%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
@@ -347,10 +347,11 @@ header {
   height: var(--header-height);
   display: flex;
   justify-content: flex-end;
-  background-color: var(--bg-color--header);
+  /* background-color: var(--bg-color--header); */
+  background-image: linear-gradient(to bottom, var(--bg-color--header) 10%, transparent);
   /* border-bottom: 1px solid var(--border-color); */
-  box-shadow: 0 0 2rem var(--bg-color);
-  backdrop-filter: blur(3px);
+  box-shadow: 0 0 3em 0.25em var(--bg-color);
+  backdrop-filter: blur(0.5rem);
 }
 
 /* header logo and its animation (mobile, tablet, and desktop */
