@@ -53,11 +53,11 @@ input, button, textarea, select {
   --bg-color--extra-dark: hsl(42, 3%, 8%);
   --bg-color--lighter: hsl(60, 2%, 15%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
-  --border-color: hsl(60, 1%, 35%); /* redefine later */
-  --border-color--muted: hsl(60, 1%, 25%); /* redefine later */
+  --border-color: hsl(60, 1%, 35%);
+  --border-color--muted: hsl(60, 1%, 25%);
   --border-radius--s: 4px;
   --border-radius--m: 8px;
-  --monospace: 'Geist Mono', monospace; /* monospace font setting */
+  --monospace: 'Geist Mono', monospace;
   --transition-speed: 0.3s;
   --transition-speed--longer: 0.5s;
   --intro-delay--header: 3s;
@@ -357,15 +357,13 @@ header {
   height: var(--header-height);
   display: flex;
   justify-content: flex-end;
-  /* background-color: var(--bg-color--header); */
   background-image: linear-gradient(to bottom, var(--bg-color--header) 10%, transparent);
-  /* border-bottom: 1px solid var(--border-color); */
   box-shadow: 0 0 3em 0.25em var(--bg-color);
   -webkit-backdrop-filter: blur(0.5rem);
   backdrop-filter: blur(0.5rem);
 }
 
-/* header logo and its animation (mobile, tablet, and desktop */
+/* header logo + animation */
 header .logo {
   position: absolute;
   top: 50%;
