@@ -250,16 +250,6 @@ section:not(#welcome-section) > .container {
   align-items: center;
 }
 
-.particles-bg-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  /* background: radial-gradient(ellipse closest-side, transparent, var(--bg-color)); */
-}
-
 @keyframes particles-translate-x {
   to {
     transform: translate(7.4%);
