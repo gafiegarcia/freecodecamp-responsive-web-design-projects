@@ -371,6 +371,7 @@ header {
   background-image: linear-gradient(to bottom, var(--bg-color--header) 10%, transparent);
   /* border-bottom: 1px solid var(--border-color); */
   box-shadow: 0 0 3em 0.25em var(--bg-color);
+  -webkit-backdrop-filter: blur(0.5rem);
   backdrop-filter: blur(0.5rem);
 }
 
@@ -382,6 +383,7 @@ header .logo {
   transform: translate(0, -50%);
   display: inline-block;
   font-size: calc(var(--header-height) / 2 - 0.25rem);
+  -webkit-user-select: none;
   user-select: none;
   line-height: 2;
 }
@@ -512,6 +514,7 @@ h1 {
   margin-block-start: 4rem;
   max-width: min(15rem, 70%);
   margin-inline: auto;
+  -webkit-mask-image: radial-gradient(circle, black 58%, transparent 61%);
   mask-image: radial-gradient(circle, black 58%, transparent 61%);
 }
 
@@ -640,6 +643,7 @@ h1 {
 }
 
 .scroll-hint {
+  -webkit-user-select: none;
   user-select: none;
   margin-block-start: 0.25rem;
   margin-inline: auto;
