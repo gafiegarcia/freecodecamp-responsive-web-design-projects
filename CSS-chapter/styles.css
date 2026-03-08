@@ -405,6 +405,16 @@ header .logo:is(:hover, :focus, :active) .animate-in {
   transform: translate(100%);
 }
 
+@media (min-width: 767px) {
+  #navbar {
+    animation: none;
+  }
+
+  .logo:is(:hover, :focus, :active) + #navbar {
+    transform: none;
+  }
+}
+
 .nav-link {
   padding-inline: 1rem;
   height: 100%;
