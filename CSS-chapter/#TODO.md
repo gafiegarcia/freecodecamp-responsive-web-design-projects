@@ -9,7 +9,8 @@
 ## Personal Portfolio page
 
 ### Misc
-- [ ] add webkit properties for Safari compatibility
+- [x] add webkit properties for Safari compatibility
+- [ ] update README and HTML content with info about this project finishing (went {too} far beyond what I was taught) and how proud I am with this last curriculum project
 
 ### v1.0--progressive-enhancement-draft
 - [x] try out deleting 100dvh lines and let 100vh lines be on #welcome-section and #contact-section for consistent scrolling experience on mobile without layout jitters when the browser menu bar shows and hides
