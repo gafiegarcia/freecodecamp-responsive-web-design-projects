@@ -14,7 +14,7 @@
 ### v1.0--progressive-enhancement-draft
 - [x] try out deleting 100dvh lines and let 100vh lines be on #welcome-section and #contact-section for consistent scrolling experience on mobile without layout jitters when the browser menu bar shows and hides
 - [x] optimize up to 1024px
-- [ ] (optional) create new layout >1024px to make use of the full viewport width
+- [x] (optional) create new layout >1024px to make use of the full viewport width
 - [ ] Create README.md; assume the project is live on github pages when writing it
 
 ### (planned) v1.1 with nice to have features(animation and theme toggle)

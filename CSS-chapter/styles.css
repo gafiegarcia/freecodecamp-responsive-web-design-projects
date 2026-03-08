@@ -83,6 +83,11 @@ input, button, textarea, select {
   }
 }
 
+@media (min-width: 1024px) {
+  :root {
+    --section-container-margin-top: 8rem;
+  }
+}
 
 /* theme-switching variables goes here */
 
@@ -482,16 +487,34 @@ h1 {
 
 #welcome-section .btn-div {
   margin-top: 6rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(2rem, 0.8603rem + 2.3774vw, 3rem);
 }
 
-/* About section */
+/* Introduction section */
 .gaf-picture {
-  display: block;
+  display: flex;
   margin-block-start: 4rem;
-  overflow: hidden;
   max-width: min(15rem, 70%);
   margin-inline: auto;
   mask-image: radial-gradient(circle, black 58%, transparent 61%);
+}
+
+@media (min-width: 1024px) {
+  #introduction-section .section-content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .gaf-picture {
+    margin-block-start: 0;
+    margin-inline: 0;
+  }
 }
 
 /* Project section */
@@ -518,6 +541,12 @@ h1 {
 .project-tiles + .caption {
   text-align: center;
   font-style: italic;
+}
+
+@media (min-width: 1024px) {
+  .project-tiles {
+    scroll-snap-type: x proximity;
+  }
 }
 
 .project-tile {
