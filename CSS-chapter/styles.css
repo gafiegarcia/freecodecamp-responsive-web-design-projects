@@ -332,7 +332,7 @@ section:not(#welcome-section) > .container {
 }
 
 section:target h2 {
-  animation: highlight-section 1.25s ease 0.5s 1;
+  animation: highlight-section 1.25s ease 0.7s 1;
 }
 
 /* 
