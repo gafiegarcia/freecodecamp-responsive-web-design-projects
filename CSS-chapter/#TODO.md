@@ -8,6 +8,9 @@
 
 ## Personal Portfolio page
 
+### Misc
+- [ ] add webkit properties for Safari compatibility
+
 ### v1.0--progressive-enhancement-draft
 - [ ] try out deleting 100dvh lines and let 100vh lines be on #welcome-section and #contact-section for consistent scrolling experience on mobile without layout jitters when the browser menu bar shows and hides
 - [ ] optimize up to 1024px
