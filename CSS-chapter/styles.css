@@ -490,7 +490,7 @@ h1 {
   margin-inline-start: calc(var(--container-padding) * -1);
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--border-color) var(--bg-color--lighter);
-  width: 100vw;
+  width: calc(100% + calc(var(--container-padding) * 2));
 }
 
 .project-tiles + .caption {
