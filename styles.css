@@ -266,6 +266,10 @@ section:not(#welcome-section) > .container {
 }
 
 /* Contact logo link */
+.contact-logo-link {
+  transition: all var(--transition-speed) ease-out;
+}
+
 .contact-logo-link.circular-border {
   padding: 1rem;
   border-radius: 50%;
@@ -280,7 +284,7 @@ section:not(#welcome-section) > .container {
   object-fit: contain;
   vertical-align: middle;
   display: inline;
-  filter: brightness(80%) saturate(0%);
+  filter: brightness(60%) saturate(0%);
   transition: 
     filter var(--transition-speed) ease-out, 
     transform var(--transition-speed) ease-out
@@ -297,11 +301,8 @@ section:not(#welcome-section) > .container {
   padding: 0.75rem 1rem;
   border-radius: var(--border-radius--m);
   border: 1px solid var(--border-color);
-  transition: background-color var(--transition-speed) ease;
-}
-
-.btn-link:focus {
   outline-offset: -2px;
+  transition: background-color var(--transition-speed) ease, outline-color var(--transition-speed) ease;
 }
 
 .btn-link:not(.accent):is(:hover, :focus) {
@@ -441,6 +442,7 @@ header .logo:is(:hover, :focus, :active) .animate-in {
   height: 100%;
   text-decoration: none;
   line-height: var(--header-height);
+  transition: all var(--transition-speed) ease;
 }
 
 @media (max-width: 21.75rem) {
@@ -734,15 +736,8 @@ footer hr {
   background-color: var(--bg-color--lighter);
 }
 
-.hover-inset-shadow {
-  transition: 
-    box-shadow var(--transition-speed) ease,
-    color var(--transition-speed) ease /* for .nav-link */
-  ;
-}
-
 .hover-inset-shadow:hover {
-  box-shadow: inset 0 -1em 1.5em -1.75em;
+  box-shadow: inset 0 -1.5em 2em -2em;
   color: var(--text-color--light);
 }
 
