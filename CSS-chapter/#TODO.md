@@ -5,6 +5,7 @@
 ### Done
 - [x] Finish creating styles-template.css
 - [x] Add prefers-reduced-motion @media query and an appropriate section for it in CSS file structure
+- [ ] SEO Practice!
 
 ## Personal Portfolio page
 
