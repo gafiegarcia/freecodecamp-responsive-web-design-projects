@@ -128,8 +128,10 @@ body::selection {
 
 a {
   color: inherit;
+  outline-offset: 1px;
+  outline: 2px solid transparent;
   transition: 
-    outline var(--transition-speed) ease,
+    outline-color var(--transition-speed) ease,
     color var(--transition-speed) ease;
 }
 
@@ -139,8 +141,7 @@ a:hover {
 }
 
 a:focus {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 1px;
+  outline-color: var(--accent-color);
 }
 
 p {
@@ -566,11 +567,9 @@ h1 {
   max-width: 23rem;
   text-decoration: none;
   filter: brightness(0.85);
-  transition: filter var(--transition-speed) ease;
+  transition: all var(--transition-speed) ease;
   scroll-snap-align: center;
-  &:focus {
-    outline-offset: -1px;
-  }
+  outline-offset: -2px;
 }
 
 .project-tile:hover {
