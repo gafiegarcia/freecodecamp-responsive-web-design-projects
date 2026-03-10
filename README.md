@@ -23,8 +23,8 @@ All written in pure/vanilla/plain `HTML` and `CSS`. I never settle for only fulf
 
 No JS nor frameworks yet. Just HTML and CSS.
 
-Some things I picked up (and heavily relied on) along the way: CSS custom properties, `clamp()` for responsive typography, Flexbox and Grid, mobile-first approach, WebP image optimization (some of my pages needed 10 seconds to load before this), and accessibility practices (`aria` attributes, `prefers-reduced-motion`, semantic HTML).
+Some things I picked up (and heavily relied on) along the way: CSS custom properties, `clamp()` for responsive typography, Flexbox and Grid (mostly flex all the way), mobile-first approach, WebP image optimization (some of my pages needed 10 seconds to load before this), and accessibility practices (`aria` attributes, `prefers-reduced-motion`, semantic HTML).
 
 ## Status
 
-Certification in progress — the personal portfolio page (which doubles as this site's homepage) is the last remaining project and has just been submitted. Almost there; reviews, quiz, and the last certification exam left.
+Certification in progress — the personal portfolio page (homepage) is the last remaining project and has just been submitted. Almost there; reviews, quiz, and the last certification exam left.
