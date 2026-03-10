@@ -360,9 +360,11 @@ div.intro-animation {
   }
   75% {
     opacity: 100%;
+    pointer-events: initial;
   }
   100% {
     opacity: 0%;
+    pointer-events: none;
   }
 }
 
