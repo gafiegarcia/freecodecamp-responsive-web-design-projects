@@ -52,6 +52,7 @@ input, button, textarea, select {
   --bg-color--header: hsla(48, 5%, 10%, 0.98);
   --bg-color--extra-dark: hsl(45, 3%, 8%);
   --bg-color--lighter: hsl(60, 2%, 15%);
+  --bg-color--intro: hsla(60, 10%, 90%, 0.9);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 35%);
   --border-color--muted: hsl(60, 1%, 25%);
@@ -60,6 +61,7 @@ input, button, textarea, select {
   --monospace: 'Geist Mono', monospace;
   --transition-speed: 0.3s;
   --transition-speed--longer: 0.5s;
+  --intro-page-duration: 2.2s;
   --intro-delay--header: 3s;
   --header-height: 4rem;
   --container-max-width: 100%;
@@ -326,6 +328,89 @@ section:not(#welcome-section) > .container {
 */
 /* Page-specific styling */
 
+/* intro animation */
+div.intro-animation {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100vw;
+  height: 100vh;
+  padding-bottom: 4rem;
+  background-color: var(--bg-color--intro);
+  /* -webkit-backdrop-filter: blur(28px);
+  backdrop-filter: blur(28px); */
+  color: var(--bg-color--extra-dark);
+  font-size: clamp(1.5rem, 0.5rem + 3.3333vw, 3.5rem);
+  animation: intro-page var(--intro-page-duration) ease forwards;
+  --slide-duration--1: 2.1s;
+  --slide-duration--2: 1.4s 0.7s;
+  span:first-child {
+    font-variation-settings: "wdth" 95;
+    letter-spacing: -1px;
+    animation: left-slide-in var(--slide-duration--1) ease-out backwards ;
+  }
+  span:nth-of-type(2) {
+    letter-spacing: -2px;
+    color: var(--text-color--muted);
+    animation: right-slide-in var(--slide-duration--2) ease-out backwards;
+  }
+}
+
+@keyframes intro-page {
+  0% {
+    opacity: 100%;
+  }
+  75% {
+    opacity: 100%;
+    pointer-events: initial;
+  }
+  100% {
+    opacity: 0%;
+    pointer-events: none;
+  }
+}
+
+@keyframes left-slide-in {
+  from {
+    opacity: 0%;
+    transform: translateX(-30%);
+  }
+  to {
+    opacity: 100%;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes right-slide-in {
+  from {
+    opacity: 0%;
+    transform: translateX(35%);
+  }
+  to {
+    opacity: 100%;
+    transform: translateX(10%);
+  }
+}
+
+header, main {
+  animation: intro-unblur 1.5s ease calc(var(--intro-page-duration) - 0.8s) backwards;
+}
+
+@keyframes intro-unblur {
+  from {
+    filter: blur(32px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
 /* :target-text animation */
 @keyframes highlight-section {
   0% {
@@ -393,7 +478,7 @@ header .logo .animate-in-container {
 header .logo .animate-in {
   display: inline-block;
   transform: translate(-100%);
-  animation: logo-animate-out 1s ease var(--intro-delay--header) 1 backwards;
+  animation: logo-animate-out 1s ease calc(var(--intro-page-duration) + var(--intro-delay--header)) 1 backwards;
   transition: transform var(--transition-speed--longer) ease;
 }
 
@@ -416,7 +501,7 @@ header .logo:is(:hover, :focus, :active) .animate-in {
   display: flex;
   align-items: center;
   font-size: 87.5%;
-  animation: navbar-animate-in 1s ease var(--intro-delay--header) 1 backwards;
+  animation: navbar-animate-in 1s ease calc(var(--intro-page-duration) + var(--intro-delay--header)) 1 backwards;
   transition: transform var(--transition-speed--longer) ease;
   padding-inline-end: calc(var(--header-padding) / 2);
 }
@@ -707,6 +792,10 @@ footer hr {
    7. UTILITIES
    ================================ 
 */
+
+.medium {
+  font-weight: 500;
+}
 
 .bold {
   font-weight: 700;
