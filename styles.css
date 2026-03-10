@@ -331,7 +331,7 @@ section:not(#welcome-section) > .container {
 /* intro animation */
 div.intro-animation {
   z-index: 999;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
