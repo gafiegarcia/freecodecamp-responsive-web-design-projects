@@ -8,10 +8,16 @@
 
 ## Personal Portfolio page
 
+### Misc
+- [x] add webkit properties for Safari compatibility
+- [x] update README and HTML content with info about this project finishing (went {too} far beyond what I was taught) and how proud I am with this last curriculum project
+- [x] SEO Practice!
+
 ### v1.0--progressive-enhancement-draft
-- [ ] optimize up to 1024px
-- [ ] (optional) create new layout >1024px to make use of the full viewport width
-- [ ] Create README.md; assume the project is live on github pages when writing it
+- [x] try out deleting 100dvh lines and let 100vh lines be on #welcome-section and #contact-section for consistent scrolling experience on mobile without layout jitters when the browser menu bar shows and hides
+- [x] optimize up to 1024px
+- [x] (optional) create new layout >1024px to make use of the full viewport width
+- [x] Create README.md; assume the project is live on github pages when writing it
 
 ### (planned) v1.1 with nice to have features(animation and theme toggle)
 - [ ] Time to start trying out theme toggle button implementation!
@@ -20,7 +26,7 @@
     - Welcome...
     - You weren't supposed to find this... <br> but,
 
-### Done
+### Archive
 - [x] Move ::selection rule to BASE as it is a base styling, not section-specific
 - [x] Unify margin-block-start for all section containers if I decide to use the same value for all of them
 - [x] Remove .radio-btn component if it's not used
