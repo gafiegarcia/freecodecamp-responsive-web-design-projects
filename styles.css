@@ -52,7 +52,7 @@ input, button, textarea, select {
   --bg-color--header: hsla(48, 5%, 10%, 0.98);
   --bg-color--extra-dark: hsl(45, 3%, 8%);
   --bg-color--lighter: hsl(60, 2%, 15%);
-  --bg-color--intro: hsl(60, 2%, 95%);
+  --bg-color--intro: hsla(60, 10%, 90%, 0.9);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 35%);
   --border-color--muted: hsl(60, 1%, 25%);
@@ -61,7 +61,7 @@ input, button, textarea, select {
   --monospace: 'Geist Mono', monospace;
   --transition-speed: 0.3s;
   --transition-speed--longer: 0.5s;
-  --intro-page-duration: 1.5s;
+  --intro-page-duration: 2.2s;
   --intro-delay--header: 3s;
   --header-height: 4rem;
   --container-max-width: 100%;
@@ -341,16 +341,24 @@ div.intro-animation {
   gap: 1rem;
   width: 100vw;
   height: 100vh;
-  padding: var(--container-padding);
+  padding-bottom: 4rem;
   background-color: var(--bg-color--intro);
   /* -webkit-backdrop-filter: blur(28px);
   backdrop-filter: blur(28px); */
   color: var(--bg-color--extra-dark);
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 0.5rem + 3.3333vw, 3.5rem);
   animation: intro-page var(--intro-page-duration) ease forwards;
+  --slide-duration--1: 2.1s;
+  --slide-duration--2: 1.4s 0.7s;
+  span:first-child {
+    font-variation-settings: "wdth" 95;
+    letter-spacing: -1px;
+    animation: left-slide-in var(--slide-duration--1) ease-out backwards ;
+  }
   span:nth-of-type(2) {
-    /* font-size: 85%; */
+    letter-spacing: -2px;
     color: var(--text-color--muted);
+    animation: right-slide-in var(--slide-duration--2) ease-out backwards;
   }
 }
 
@@ -365,6 +373,28 @@ div.intro-animation {
   100% {
     opacity: 0%;
     pointer-events: none;
+  }
+}
+
+@keyframes left-slide-in {
+  from {
+    opacity: 0%;
+    transform: translateX(-30%);
+  }
+  to {
+    opacity: 100%;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes right-slide-in {
+  from {
+    opacity: 0%;
+    transform: translateX(35%);
+  }
+  to {
+    opacity: 100%;
+    transform: translateX(10%);
   }
 }
 
@@ -762,6 +792,10 @@ footer hr {
    7. UTILITIES
    ================================ 
 */
+
+.medium {
+  font-weight: 500;
+}
 
 .bold {
   font-weight: 700;
