@@ -444,7 +444,7 @@ header .logo .animate-in-container {
 header .logo .animate-in {
   display: inline-block;
   transform: translate(-100%);
-  animation: logo-animate-out 1s ease var(--intro-delay--header) 1 backwards;
+  animation: logo-animate-out 1s ease calc(var(--intro-page-duration) + var(--intro-delay--header)) 1 backwards;
   transition: transform var(--transition-speed--longer) ease;
 }
 
@@ -467,7 +467,7 @@ header .logo:is(:hover, :focus, :active) .animate-in {
   display: flex;
   align-items: center;
   font-size: 87.5%;
-  animation: navbar-animate-in 1s ease var(--intro-delay--header) 1 backwards;
+  animation: navbar-animate-in 1s ease calc(var(--intro-page-duration) + var(--intro-delay--header)) 1 backwards;
   transition: transform var(--transition-speed--longer) ease;
   padding-inline-end: calc(var(--header-padding) / 2);
 }
