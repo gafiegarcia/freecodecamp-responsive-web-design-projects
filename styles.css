@@ -67,7 +67,7 @@ input, button, textarea, select {
   --container-max-width: 100%;
   --header-padding: 1rem;
   --container-padding: 1.5rem;
-  --section-container-margin-top: 6rem;
+  --section-container-margin-top: 10rem;
   --section-headings-margin-block-start: 3rem;
   --text-max-width: 40rem;
 }
@@ -87,7 +87,7 @@ input, button, textarea, select {
 
 @media (min-width: 1024px) {
   :root {
-    --section-container-margin-top: 8rem;
+    --section-container-margin-top: 16rem;
   }
 }
 
