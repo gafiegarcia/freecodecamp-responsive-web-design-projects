@@ -226,8 +226,9 @@ section:not(#welcome-section) > .container {
 /* My name-logo */
 .logo {
   text-decoration: none;
-  font-family: 'Zalando Sans SemiExpanded';
+  font-family: 'Zalando Sans';
   font-weight: 600;
+  font-variation-settings: "wdth" 112.5;
 }
 
 .logo, .logo:hover {
