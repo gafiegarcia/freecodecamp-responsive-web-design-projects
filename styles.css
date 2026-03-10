@@ -67,7 +67,7 @@ input, button, textarea, select {
   --container-max-width: 100%;
   --header-padding: 1rem;
   --container-padding: 1.5rem;
-  --section-container-margin-top: 10rem;
+  --section-container-margin-top: 12rem;
   --section-headings-margin-block-start: 3rem;
   --text-max-width: 40rem;
 }
@@ -87,7 +87,7 @@ input, button, textarea, select {
 
 @media (min-width: 1024px) {
   :root {
-    --section-container-margin-top: 16rem;
+    --section-container-margin-top: 20rem;
   }
 }
 
@@ -108,6 +108,12 @@ html {
   /* dynamic font size 14px -> 16px from 320px to 767px viewport width */
   font-size: clamp(87.5%, 78.55% + 0.4474vw, 100%);
   scrollbar-gutter: stable;
+}
+
+@media (min-width: 1440px) {
+  html {
+    scroll-padding-top: calc(var(--header-height) + 4rem);
+  }
 }
 
 @media (min-width: 1921px) {
@@ -174,6 +180,7 @@ h3 {
 @media (min-width: 767px) {
   h2 {
     font-size: clamp(2.25rem, 1.1308rem + 2.3346vw, 2.625rem);
+    margin-block-end: 2rem;
   }
 
   h3 {
@@ -614,6 +621,12 @@ h1 {
   }
 }
 
+@media (min-width: 1440px) {
+  #introduction-section .section-content {
+    gap: 4rem;
+  }
+}
+
 /* Project section */
 .fcc-chapter-heading {
   font-size: clamp(1.25rem, 0.8769rem + 0.7782vw, 1.375rem);
@@ -760,6 +773,12 @@ footer {
   display: flex;
   flex-direction: column;
   scroll-margin-top: calc((var(--header-height) + 2rem) * -1);
+}
+
+@media (min-width: 1440px) {
+  footer {
+    scroll-margin-top: calc((var(--header-height) + 4rem) * -1);
+  }
 }
 
 footer .container {
