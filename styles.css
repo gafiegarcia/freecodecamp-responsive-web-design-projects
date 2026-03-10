@@ -49,7 +49,7 @@ input, button, textarea, select {
   --text-color--light: hsl(60, 10%, 95%); /* Notion-like text color */
   --text-color--muted: hsl(60, 5%, 40%); /* Notion text color */
   --bg-color: hsl(48, 5%, 10%);
-  --bg-color--header: hsla(48, 5%, 10%, 0.95);
+  --bg-color--header: hsla(48, 5%, 10%, 0.98);
   --bg-color--extra-dark: hsl(45, 3%, 8%);
   --bg-color--lighter: hsl(60, 2%, 15%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
@@ -356,7 +356,7 @@ header {
   height: var(--header-height);
   display: flex;
   justify-content: flex-end;
-  background-image: linear-gradient(to bottom, var(--bg-color--header) 10%, transparent);
+  background-image: linear-gradient(to bottom, var(--bg-color--header) 0%, transparent 100%);
   box-shadow: 0 0 3em 0.25em var(--bg-color);
   -webkit-backdrop-filter: blur(0.75rem);
   backdrop-filter: blur(0.75rem);
