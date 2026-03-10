@@ -52,6 +52,7 @@ input, button, textarea, select {
   --bg-color--header: hsla(48, 5%, 10%, 0.98);
   --bg-color--extra-dark: hsl(45, 3%, 8%);
   --bg-color--lighter: hsl(60, 2%, 15%);
+  --bg-color--intro: hsl(60, 2%, 95%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 35%);
   --border-color--muted: hsl(60, 1%, 25%);
@@ -60,6 +61,7 @@ input, button, textarea, select {
   --monospace: 'Geist Mono', monospace;
   --transition-speed: 0.3s;
   --transition-speed--longer: 0.5s;
+  --intro-page-duration: 1.5s;
   --intro-delay--header: 3s;
   --header-height: 4rem;
   --container-max-width: 100%;
@@ -325,6 +327,55 @@ section:not(#welcome-section) > .container {
    ================================ 
 */
 /* Page-specific styling */
+
+/* intro animation */
+div.intro-animation {
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100vw;
+  height: 100vh;
+  padding: var(--container-padding);
+  background-color: var(--bg-color--intro);
+  /* -webkit-backdrop-filter: blur(28px);
+  backdrop-filter: blur(28px); */
+  color: var(--bg-color--extra-dark);
+  font-size: 1.5rem;
+  animation: intro-page var(--intro-page-duration) ease forwards;
+  span:nth-of-type(2) {
+    /* font-size: 85%; */
+    color: var(--text-color--muted);
+  }
+}
+
+@keyframes intro-page {
+  0% {
+    opacity: 100%;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+header, main {
+  animation: intro-unblur 1.5s ease calc(var(--intro-page-duration) - 0.8s) backwards;
+}
+
+@keyframes intro-unblur {
+  from {
+    filter: blur(32px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
 
 /* :target-text animation */
 @keyframes highlight-section {
