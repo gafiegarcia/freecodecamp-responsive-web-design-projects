@@ -51,7 +51,7 @@ input, button, textarea, select {
   --bg-color: hsl(48, 3%, 10%);
   --bg-color--header: hsla(48, 3%, 10%, 0.98);
   --bg-color--extra-dark: hsl(45, 2%, 8%);
-  --bg-color--lighter: hsl(60, 3%, 15%);
+  --bg-color--lighter: hsl(50, 3%, 15%);
   --bg-color--intro: hsla(48, 10%, 90%, 0.9);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 35%);
