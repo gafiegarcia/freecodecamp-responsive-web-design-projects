@@ -338,6 +338,8 @@ section:not(#welcome-section) > .container {
 /* intro animation */
 div.intro-animation {
   z-index: 999;
+  -webkit-user-select: none;
+  user-select: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -350,8 +352,6 @@ div.intro-animation {
   height: 100vh;
   padding-bottom: 4rem;
   background-color: var(--bg-color--intro);
-  /* -webkit-backdrop-filter: blur(28px);
-  backdrop-filter: blur(28px); */
   color: var(--bg-color--extra-dark);
   font-size: clamp(1.5rem, 0.5rem + 3.3333vw, 3.5rem);
   animation: intro-page var(--intro-page-duration) ease forwards;
