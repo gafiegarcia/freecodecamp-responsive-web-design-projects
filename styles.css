@@ -127,6 +127,7 @@ body {
   line-height: 1.6;
   background-color: var(--bg-color);
   font-family: 'Zalando Sans', sans-serif;
+  letter-spacing: .1px;
 }
 
 body::selection {
@@ -153,6 +154,7 @@ a:focus {
 }
 
 p {
+  text-wrap: pretty;
   max-width: var(--text-max-width);
   margin-block-start: 1rem;
   + p {
