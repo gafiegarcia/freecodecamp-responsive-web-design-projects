@@ -839,6 +839,10 @@ footer hr {
   font-family: var(--monospace);
 }
 
+.text-nowrap {
+  text-wrap: nowrap;
+}
+
 .logo-inline {
   display: inline;
   height: auto;
