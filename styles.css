@@ -355,17 +355,18 @@ div.intro-animation {
   color: var(--bg-color--extra-dark);
   font-size: clamp(1.5rem, 0.5rem + 3.3333vw, 3.5rem);
   animation: intro-page var(--intro-page-duration) ease forwards;
-  --slide-duration--1: 2s;
-  --slide-duration--2: 1.3s 0.7s;
+  --slide-duration--1: calc(var(--intro-page-duration) - 0.2s);
+  --slide-duration--2: calc(var(--slide-duration--1) - var(--slide-delay--2));
+  --slide-delay--2: 0.7s;
   span:first-child {
     font-variation-settings: "wdth" 95;
     letter-spacing: -1px;
-    animation: left-slide-in var(--slide-duration--1) cubic-bezier(.05,.83,.87,1.01) both ;
+    animation: left-slide-in var(--slide-duration--1) cubic-bezier(0,.71,.95,.95) both ;
   }
   span:nth-of-type(2) {
     letter-spacing: -2px;
     color: var(--text-color--muted);
-    animation: right-slide-in var(--slide-duration--2) cubic-bezier(.05,.83,.87,1.01) both;
+    animation: right-slide-in var(--slide-duration--2) var(--slide-delay--2) cubic-bezier(0,.71,.95,.95) both;
   }
 }
 
@@ -386,9 +387,9 @@ div.intro-animation {
 @keyframes left-slide-in {
   0% {
     opacity: 0%;
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
-  25% {
+  40% {
     opacity: 100%;
   }
   100% {
@@ -399,13 +400,13 @@ div.intro-animation {
 @keyframes right-slide-in {
   0% {
     opacity: 0%;
-    transform: translateX(50%);
+    transform: translateX(30%);
   }
-  25% {
+  40% {
     opacity: 100%;
   }
   100% {
-    transform: translateX(15%);
+    transform: translateX(10%);
   }
 }
 

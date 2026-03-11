@@ -22,7 +22,7 @@
 ### (planned) v1.1 with nice to have features(animation and theme toggle)
 - [ ] Time to start trying out theme toggle button implementation!
   - [ ] Find Toggle theme icons online and add proper hover animation
-- [ ] INTRO animation (aria-hidden="true"):
+- [x] INTRO animation (aria-hidden="true"):
     - Welcome...
     - You weren't supposed to find this... <br> but,
 
