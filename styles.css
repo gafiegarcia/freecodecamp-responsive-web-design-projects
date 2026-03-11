@@ -348,17 +348,17 @@ div.intro-animation {
   color: var(--bg-color--extra-dark);
   font-size: clamp(1.5rem, 0.5rem + 3.3333vw, 3.5rem);
   animation: intro-page var(--intro-page-duration) ease forwards;
-  --slide-duration--1: 2.1s;
-  --slide-duration--2: 1.4s 0.7s;
+  --slide-duration--1: 2s;
+  --slide-duration--2: 1.3s 0.7s;
   span:first-child {
     font-variation-settings: "wdth" 95;
     letter-spacing: -1px;
-    animation: left-slide-in var(--slide-duration--1) ease-out backwards ;
+    animation: left-slide-in var(--slide-duration--1) cubic-bezier(.05,.83,.87,1.01) both ;
   }
   span:nth-of-type(2) {
     letter-spacing: -2px;
     color: var(--text-color--muted);
-    animation: right-slide-in var(--slide-duration--2) ease-out backwards;
+    animation: right-slide-in var(--slide-duration--2) cubic-bezier(.05,.83,.87,1.01) both;
   }
 }
 
@@ -377,24 +377,28 @@ div.intro-animation {
 }
 
 @keyframes left-slide-in {
-  from {
+  0% {
     opacity: 0%;
-    transform: translateX(-30%);
+    transform: translateX(-50%);
   }
-  to {
+  25% {
     opacity: 100%;
-    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(2%);
   }
 }
 
 @keyframes right-slide-in {
-  from {
+  0% {
     opacity: 0%;
-    transform: translateX(35%);
+    transform: translateX(50%);
   }
-  to {
+  25% {
     opacity: 100%;
-    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(15%);
   }
 }
 
@@ -404,7 +408,7 @@ header, main {
 
 @keyframes intro-unblur {
   from {
-    filter: blur(32px);
+    filter: blur(48px);
   }
   to {
     filter: blur(0);
