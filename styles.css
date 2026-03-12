@@ -52,7 +52,7 @@ input, button, textarea, select {
   --bg-color--header: hsla(48, 3%, 10%, 0.98);
   --bg-color--extra-dark: hsl(45, 2%, 8%);
   --bg-color--lighter: hsl(50, 3%, 15%);
-  --bg-color--intro: hsla(48, 10%, 90%, 0.9);
+  --bg-color--intro: hsl(48, 10%, 95%);
   --shadow-color: hsla(60, 1%, 10%, 0.8);
   --border-color: hsl(60, 1%, 35%);
   --border-color--muted: hsl(60, 1%, 25%);
@@ -356,7 +356,7 @@ div.intro-animation {
   background-color: var(--bg-color--intro);
   color: var(--bg-color--extra-dark);
   font-size: clamp(1.5rem, 0.5rem + 3.3333vw, 3.5rem);
-  animation: intro-page var(--intro-page-duration) ease forwards;
+  animation: intro-page var(--intro-page-duration) ease both;
   --slide-duration--1: calc(var(--intro-page-duration) - 0.2s);
   --slide-duration--2: calc(var(--slide-duration--1) - var(--slide-delay--2));
   --slide-delay--2: 0.7s;
