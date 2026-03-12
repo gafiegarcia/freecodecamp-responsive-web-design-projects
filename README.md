@@ -27,4 +27,6 @@ Some things I picked up (and heavily relied on) along the way: CSS custom proper
 
 ## Status
 
-Certification in progress — the personal portfolio page (homepage) is the last remaining project and has just been submitted. Almost there; reviews, quiz, and the last certification exam left.
+Some projects may not be up-to-date with the current projects in fCC curriculum (as it keeps getting updated over time; "Set of Colored Boxes" is the one project recently turned into a *workshop* instead at the time of this writing).
+
+<img width="2880" height="1722" alt="www freecodecamp org_certification_gafiegarcia_responsive-web-design-v9" src="https://github.com/user-attachments/assets/30edeee7-add9-481c-a566-9d5af1c50285" />
