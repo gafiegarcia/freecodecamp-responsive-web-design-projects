@@ -567,7 +567,7 @@ header .logo:is(:hover, :focus, :active) .animate-in {
 /* Welcome section */
 #welcome-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -776,7 +776,7 @@ footer {
   position: relative;
   margin-top: var(--section-container-margin-top);
   padding-block: var(--header-height);
-  min-height: 100vh;
+  min-height: 100lvh;
   display: flex;
   flex-direction: column;
   scroll-margin-top: calc((var(--header-height) + 2rem) * -1);
