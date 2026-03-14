@@ -62,7 +62,8 @@ input, button, textarea, select {
   --transition-speed: 0.3s;
   --transition-speed--longer: 0.5s;
   --intro-page-duration: 2.2s;
-  --intro-delay--header: 3s;
+  --intro-page-delay: 0.4s;
+  --intro-delay--header: calc(3s + var(--intro-page-delay));
   --header-height: 4rem;
   --container-max-width: 100%;
   --header-padding: 1rem;
@@ -356,19 +357,19 @@ div.intro-animation {
   background-color: var(--bg-color--intro);
   color: var(--bg-color--extra-dark);
   font-size: clamp(1.5rem, 0.5rem + 3.3333vw, 3.5rem);
-  animation: intro-page var(--intro-page-duration) ease both;
+  animation: intro-page calc(var(--intro-page-duration) + var(--intro-page-delay)) ease both;
   --slide-duration--1: calc(var(--intro-page-duration) - 0.2s);
   --slide-duration--2: calc(var(--slide-duration--1) - var(--slide-delay--2));
   --slide-delay--2: 0.7s;
   span:first-child {
     font-variation-settings: "wdth" 95;
     letter-spacing: -1px;
-    animation: left-slide-in var(--slide-duration--1) cubic-bezier(0,.71,.95,.95) both ;
+    animation: left-slide-in var(--slide-duration--1) var(--intro-page-delay) cubic-bezier(0,.71,.95,.95) both ;
   }
   span:nth-of-type(2) {
     letter-spacing: -2px;
     color: var(--text-color--muted);
-    animation: right-slide-in var(--slide-duration--2) var(--slide-delay--2) cubic-bezier(0,.71,.95,.95) both;
+    animation: right-slide-in var(--slide-duration--2) calc(var(--intro-page-delay) + var(--slide-delay--2)) cubic-bezier(0,.71,.95,.95) both;
   }
 }
 
