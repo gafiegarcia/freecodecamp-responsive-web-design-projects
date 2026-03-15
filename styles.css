@@ -679,7 +679,7 @@ h1 {
   filter: brightness(0.85);
   transition: all var(--transition-speed) ease;
   scroll-snap-align: center;
-  outline-offset: -2px;
+  outline-offset: -1px;
 }
 
 .project-tile:hover {
