@@ -109,6 +109,7 @@ html {
   /* dynamic font size 14px -> 16px from 320px to 767px viewport width */
   font-size: clamp(87.5%, 78.55% + 0.4474vw, 100%);
   scrollbar-gutter: stable;
+  scrollbar-color: var(--border-color, hsl(60, 1%, 35%)) transparent;
 }
 
 @media (min-width: 1440px) {
@@ -339,6 +340,22 @@ section:not(#welcome-section) > .container {
 /* Page-specific styling */
 
 /* intro animation */
+html {
+  animation: intro-scrollbar-color calc(var(--intro-page-duration) + var(--intro-page-delay)) ease backwards;
+}
+
+@keyframes intro-scrollbar-color {
+  0% {
+    scrollbar-color: transparent var(--bg-color--intro);
+  }
+  75% {
+    scrollbar-color: transparent var(--bg-color--intro);
+  }
+  100% {
+    scrollbar-color: var(--border-color, hsl(60, 1%, 35%)) transparent;
+  }
+}
+
 div.intro-animation {
   z-index: 999;
   -webkit-user-select: none;
@@ -652,7 +669,6 @@ h1 {
   padding-inline: var(--container-padding);
   margin-inline-start: calc(var(--container-padding) * -1);
   scroll-snap-type: x mandatory;
-  scrollbar-color: var(--border-color) var(--bg-color--lighter);
   width: calc(100% + calc(var(--container-padding) * 2));
 }
 
