@@ -67,6 +67,10 @@ body {
   transform: rotate(180deg);
 }
 
+.symbol {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .spade {
   transform: scale(110%);
 }
